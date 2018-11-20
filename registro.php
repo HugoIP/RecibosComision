@@ -3,11 +3,14 @@ include "db.php";
 
 if(isset($_POST["btnguardar"])){
 	$con = connect();
-	$nombres=$_POST['apenom'];
-	$celular=$_POST['celular'];
-	$email=$_POST['email'];
+	$serviceName=$_POST['serviceName'];
+	$barCode=$_POST['barCode'];
+	$serviceNum=$_POST['serviceNum'];
+  $pay=$_POST['pay'];
+  $orderGrup=$_POST['orderGrup'];
+
 	
-	$con->query("insert into alumnos (nombres, celular, email) value ('$nombres', '$celular', '$email')");
+	$con->query("insert into alumnos (serviceName, barCode, serviceNum, pay, orderGrup) value ('$serviceName', '$barCode', '$serviceNum','$pay', '$orderGrup')");
 	header("Location: index.php?option=ok");
 }
 
@@ -21,7 +24,7 @@ if(isset($_POST["btnguardar"])){
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Registrar Alumnos - BaulPHP</title>
+    <title>Registrar Recibos - vNova Internet</title>
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -35,7 +38,7 @@ if(isset($_POST["btnguardar"])){
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="index.php">BaulPHP</a>
+        <a class="navbar-brand" href="index.php">RecibosComision</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,7 +61,7 @@ if(isset($_POST["btnguardar"])){
     <!-- Begin page content -->
 
 <div class="container">
- <h1 class="mt-5">Registrar Alumnos </h1>
+ <h1 class="mt-5">Registrar Recibo</h1>
  <hr>
 
 <div class="row">
@@ -69,23 +72,31 @@ if(isset($_POST["btnguardar"])){
 <form id="frmLogin" action="" method="post">
   <fieldset>
         <div class="form-group">
-    <label for="Apellidos">Apellidos y Nombres:</label>
-    <input required type="text" class="form-control" name="apenom" placeholder="Ingrese Apellidos y nombres" value="">
+    <label for="serviceName">Nombre:</label>
+    <input required type="text" class="form-control" name="apenom" placeholder="Nombre del servicio" value="">
  	   </div>
         <div class="form-group">
-    <label for="celular">Celular:</label>
-    <input required class="form-control" type="text" name="celular"  placeholder="Ingrese celular" value="">
+    <label for="barCode">Codigo de barras:</label>
+    <input required class="form-control" type="text" name="barCode"  placeholder="Codigo de barras" value="">
  	   </div>
 
         <div class="form-group">
-    <label for="email">E-Mail:</label>
-    <input required class="form-control" type="email" name="email"  placeholder="Ingrese E-mail" value="">
+    <label for="serviceNum">Numero de servicio:</label>
+    <input required class="form-control" type="serviceNum" name="serviceNum"  placeholder="Numero de servicio 12 d" value="">
  	   </div>
        
+       <div class="form-group">
+    <label for="pay">Cantidad:</label>
+    <input required class="form-control" type="pay" name="pay"  placeholder="Cantidad a pagar" value="">
+     </div>
+     <div class="form-group">
+    <label for="orderGrup">Cantidad:</label>
+    <input required class="form-control" type="orderGrup" name="orderGrup"  placeholder="Grupo" value="">
+     </div>
        
        
     <input type="hidden" name="btnguardar" value="v">
-<input class="btn btn-primary" type="submit" value="Registrar Alumno">
+<input class="btn btn-primary" type="submit" value="Registrar recibo">
              
   </fieldset>
 
@@ -99,7 +110,7 @@ if(isset($_POST["btnguardar"])){
 </div><!-- Fin container -->
     <footer class="footer">
       <div class="container">
-        <span class="text-muted"><p>Códigos <a href="https://www.baulphp.com/" target="_blank">BaulPHP</a></p></span>
+        <span class="text-muted"><p>Ayuda <a href="https://www.google.com/" target="_blank">Google</a></p></span>
       </div>
     </footer>
 

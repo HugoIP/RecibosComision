@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-<title>Busqueda tiempo real con jquery, PHP y Mysql - BaulPHP</title>
+<title>Recibos</title>
 <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
 <!-- Bootstrap core CSS -->
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@ $(document).ready(function () {
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="index.php">BaulPHP</a>
+        <a class="navbar-brand" href="index.php">RecibosComision</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,7 +56,7 @@ $(document).ready(function () {
     <!-- Begin page content -->
 
 <div class="container">
- <h1 class="mt-5">Busqueda tiempo real con jquery</h1>
+ <h1 class="mt-5">Busqueda</h1>
  <hr>
 <?php
 if(isset($_GET["option"])){?>
@@ -79,26 +79,31 @@ if(isset($_GET["option"])){?>
 	    <table class="table table-hover">
         <thead>
           <tr>
-            <th>Nº</th>
-            <th>Nombres y Apellidos</th>
-            <th>Celular</th>            
-            <th>E-Mail</th>
+            <th>Nombre</th>
+            <th>Servicio</th>            
+            <th>Monto</th>
+            <th>Grupo</th>
+            <th>Entregado</th>
           </tr>
         </thead>
         <tbody class="BusquedaRapida">
 <?php
 include "db.php";
 $con = connect();
-$consulta = "SELECT * FROM alumnos";
+$consulta = "SELECT * FROM recibos";
 $resultado = mysqli_query($con , $consulta);
 $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <tr>
   <td><?php echo $contador; ?></td>
-  <td><?php echo $misdatos["nombres"]; ?></td>
-  <td><?php echo $misdatos["celular"]; ?></td>
-  <td><?php echo $misdatos["email"]; ?></td>
+  serviceName, barCode, serviceNum, pay, orderGrup
+  <td><?php echo $misdatos["serviceName"]; ?></td>
+  <td><?php echo $misdatos["barCode"]; ?></td>
+  <td><?php echo $misdatos["serviceNum"]; ?></td>
+  <td><?php echo $misdatos["pay"]; ?></td>
+  <td><?php echo $misdatos["orderGrup"]; ?></td>
+  <td><?php echo $misdatos["ship"]; ?></td>
   </tr>
           
 <?php }?>          
@@ -116,7 +121,7 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 </div><!-- Fin container -->
     <footer class="footer">
       <div class="container">
-        <span class="text-muted"><p>Códigos <a href="https://www.baulphp.com/" target="_blank">BaulPHP</a></p></span>
+        <span class="text-muted"><p>Ayuda <a href="https://www.google.com/" target="_blank">vNova Internet</a></p></span>
       </div>
     </footer>
 
