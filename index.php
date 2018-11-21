@@ -84,6 +84,7 @@ if(isset($_GET["option"])){?>
             <th>Codigo de barras</th>
             <th>Servicio</th>            
             <th>Monto</th>
+            <th>Vence</th>
             <th>Grupo</th>
             <th>Entregado</th>
           </tr>
@@ -101,6 +102,7 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <td><?php echo $misdatos["serviceName"]; ?></td>
   <td><?php echo $misdatos["barCode"]; ?></td>
   <td><?php echo $misdatos["serviceNum"]; ?></td>
+  <td><?php echo $misdatos["limitPay"]; ?></td>
   <td><?php echo $misdatos["pay"]; ?></td>
   <td><?php echo $misdatos["orderGrup"]; ?></td>
   <td><?php echo $misdatos["texStatus"]; ?></td>

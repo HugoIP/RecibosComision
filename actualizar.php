@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
 <script type="text/javascript">
 $(document).ready(function () {
+  var getBarCode;
   var getServiceNum;
   var getPay;
   var getDate;
@@ -23,9 +24,15 @@ $(document).ready(function () {
         var contentString= String($(this).val());
         if(contentString.length==30)
         {
+            getBarCode = contentString;
             getServiceNum = contentString.substring(2,13);
-            getPay = contentString.substring(20,29);
+            getPay = parseInt(contentString.substring(20,29));
             getDate = contentString.substring(14,15)+"-"+contentString.substring(16,17)+""+contentString.substring(18,19);
+        }
+        else
+        {
+          getServiceNum= contentString;
+        }
 
             var ValorBusqueda = new RegExp(getServiceNum, 'i');
 
@@ -33,11 +40,7 @@ $(document).ready(function () {
              $('.BusquedaRapida tr').filter(function () {
                 return ValorBusqueda.test($(this).text());
               }).show();
-        }
-        else
-        {
-          $('.BusquedaRapida tr').hide();
-        }
+
                 })
       }(jQuery));
 });
@@ -99,6 +102,7 @@ if(isset($_GET["option"])){?>
             <th>Codigo de barras</th>
             <th>Servicio</th>            
             <th>Monto</th>
+            <th>Vence</th>
             <th>Grupo</th>
             <th>Entregado</th>
           </tr>
@@ -113,12 +117,14 @@ $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <tr>
-  <td><?php echo $misdatos["serviceName"]; ?></td>
-  <td><?php echo $misdatos["barCode"]; ?></td>
-  <td><?php echo $misdatos["serviceNum"]; ?></td>
-  <td><?php echo $misdatos["pay"]; ?></td>
-  <td><?php echo $misdatos["orderGrup"]; ?></td>
-  <td><?php echo $misdatos["texStatus"]; ?></td>
+  <td>
+  <td id=<?php echo ("NAME-"+$misdatos["serviceNum"]); ?>> <?php echo $misdatos["serviceName"]; ?></td>
+  <td id=<?php echo ("BARC-"+$misdatos["serviceNum"]); ?>><?php echo $misdatos["barCode"]; ?></td>
+  <td id=<?php echo ("SNUM-"+$misdatos["serviceNum"]); ?>><?php echo $misdatos["serviceNum"]; ?></td>
+  <td id=<?php echo ("SPAY-"+$misdatos["serviceNum"]); ?>><?php echo $misdatos["pay"]; ?></td>
+  <td id=<?php echo ("LIMI-"+$misdatos["serviceNum"]); ?>><?php echo $misdatos["limitPay"]; ?></td>
+  <td id=<?php echo ("ORDE-"+$misdatos["serviceNum"]); ?>><?php echo $misdatos["orderGrup"]; ?></td>
+  <td id=<?php echo ("STAT-"+$misdatos["serviceNum"]); ?>><?php echo $misdatos["texStatus"]; ?></td>
   </tr>
           
 <?php }?>          
