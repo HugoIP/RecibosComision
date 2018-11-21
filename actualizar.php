@@ -68,15 +68,6 @@ if(isset($_POST["btnActualizar"])){
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
 
-
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Buscar</span>
-          </div>
-          <input id="ObtenerDatos" type="text" class="form-control" placeholder="Codigo de barras" aria-label="Codigo" aria-describedby="basic-addon1">
-        </div>
-
-
           <ul class="navbar-nav mr-auto">
           
             <li class="nav-item active">
@@ -98,6 +89,15 @@ if(isset($_POST["btnActualizar"])){
 <div class="container">
  <h1 class="mt-5">Registrar Recibo</h1>
  <hr>
+
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Buscar</span>
+  </div>
+  <input id="ObtenerDatos" type="text" class="form-control" placeholder="Codigo de barras" aria-label="Alumno" aria-describedby="basic-addon1">
+</div>
+
 
 <div class="row">
   <div class="col-12 col-md-6">
