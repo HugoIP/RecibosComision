@@ -120,7 +120,6 @@ $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <tr id="servi">
-  <td>
   <td id=<?php echo ("NAME".$misdatos["serviceNum"]); ?>><?php echo $misdatos["serviceName"]; ?></td>
   <td id=<?php echo ("BARC".$misdatos["serviceNum"]); ?>><?php echo $misdatos["barCode"]; ?></td>
   <td id=<?php echo ("SNUM".$misdatos["serviceNum"]); ?>><?php echo $misdatos["serviceNum"]; ?></td>
