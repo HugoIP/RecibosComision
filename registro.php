@@ -10,7 +10,7 @@ if(isset($_POST["btnguardar"])){
   $orderGrup=$_POST['orderGrup'];
 
 	
-	$con->query("insert into alumnos (serviceName, barCode, serviceNum, pay, orderGrup) value ('$serviceName', '$barCode', '$serviceNum','$pay', '$orderGrup')");
+	$con->query("insert into RecibosComision (serviceName, barCode, serviceNum, pay, orderGrup) value ('$serviceName', '$barCode', '$serviceNum','$pay', '$orderGrup')");
 	header("Location: index.php?option=ok");
 }
 
