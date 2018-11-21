@@ -108,6 +108,7 @@ if(isset($_GET["option"])){?>
             <th>Vence</th>
             <th>Grupo</th>
             <th>Entregado</th>
+            <th>Entregado</th>
           </tr>
         </thead>
         <tbody class="BusquedaRapida">
@@ -127,6 +128,7 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <td id=<?php echo ("LIMI".$misdatos["serviceNum"]); ?>><?php echo $misdatos["limitPay"]; ?></td>
   <td id=<?php echo ("ORDE".$misdatos["serviceNum"]); ?>><?php echo $misdatos["orderGrup"]; ?></td>
   <td id=<?php echo ("STAT".$misdatos["serviceNum"]); ?>><?php echo $misdatos["texStatus"]; ?></td>
+  <td><button class="btn btn-outline-success my-1 my-sm-0" type="submit">Editar</button></td>
   </tr>
           
 <?php }?>          
