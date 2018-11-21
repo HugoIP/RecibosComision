@@ -108,7 +108,6 @@ if(isset($_GET["option"])){?>
             <th>Vence</th>
             <th>Grupo</th>
             <th>Entregado</th>
-            <th>Entregado</th>
           </tr>
         </thead>
         <tbody class="BusquedaRapida">
@@ -121,14 +120,13 @@ $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <tr class="servi">
-  <td id=<?php echo ("NAME".$misdatos["serviceNum"]); ?>><?php echo $misdatos["serviceName"]; ?></td>
-  <td id=<?php echo ("BARC".$misdatos["serviceNum"]); ?>><?php echo $misdatos["barCode"]; ?></td>
-  <td id=<?php echo ("SNUM".$misdatos["serviceNum"]); ?>><?php echo $misdatos["serviceNum"]; ?></td>
-  <td id=<?php echo ("SPAY".$misdatos["serviceNum"]); ?>><?php echo $misdatos["pay"]; ?></td>
-  <td id=<?php echo ("LIMI".$misdatos["serviceNum"]); ?>><?php echo $misdatos["limitPay"]; ?></td>
-  <td id=<?php echo ("ORDE".$misdatos["serviceNum"]); ?>><?php echo $misdatos["orderGrup"]; ?></td>
-  <td id=<?php echo ("STAT".$misdatos["serviceNum"]); ?>><?php echo $misdatos["texStatus"]; ?></td>
-  <td><button class="btn btn-outline-success my-1 my-sm-0" type="submit">Editar</button></td>
+  <td id="NAME"><?php echo $misdatos["serviceName"]; ?></td>
+  <td id="BARC"><?php echo $misdatos["barCode"]; ?></td>
+  <td id="SNUM"><?php echo $misdatos["serviceNum"]; ?></td>
+  <td id="SPAY"><?php echo $misdatos["pay"]; ?></td>
+  <td id="LIMI"><?php echo $misdatos["limitPay"]; ?></td>
+  <td id="ORDE"><?php echo $misdatos["orderGrup"]; ?></td>
+  <td id="STAT"><?php echo $misdatos["texStatus"]; ?></td>
   </tr>
           
 <?php }?>          
