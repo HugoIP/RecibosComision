@@ -22,7 +22,7 @@ $(document).ready(function () {
    (function($) {
        $('#servi').click(function () {
           alert("Editar");
-       }
+       });
        $('#FiltrarContenido').keyup(function () {
         var contentString= String($(this).val());
         if(contentString.length==30)
