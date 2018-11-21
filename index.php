@@ -19,7 +19,6 @@ $(document).ready(function () {
        $('#FiltrarContenido').keyup(function () {
             var ValorBusqueda = new RegExp($(this).val(), 'i');
             $('.BusquedaRapida tr').hide();
-            alert($(this).text());
              $('.BusquedaRapida tr').filter(function () {
                 return ValorBusqueda.test($(this).text());
               }).show();
