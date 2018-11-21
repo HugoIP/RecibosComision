@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-<title>ACtualizar Recibos</title>
+<title>Actualizar Recibos</title>
 <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
 <!-- Bootstrap core CSS -->
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,9 +15,16 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
 <script type="text/javascript">
 $(document).ready(function () {
+  var getServiceNum;
+  var getPay;
+  var getDate;
    (function($) {
        $('#FiltrarContenido').keyup(function () {
-            var getServiceNum = String($(this).val()).substring(2,13);
+        var contentString= String($(this).val());
+        if(contentString.length==30)
+            getServiceNum = contentString.substring(2,13);
+            getPay = contentString.substring(20,29);
+            getDate = contentString.substring(14,15)+"-"+contentString.substring(16,17)+""+contentString.substring(18,19);
 
             var ValorBusqueda = new RegExp(getServiceNum, 'i');
             $('.BusquedaRapida tr').hide();
