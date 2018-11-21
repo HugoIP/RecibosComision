@@ -41,6 +41,7 @@ $(document).ready(function () {
           <ul class="navbar-nav mr-auto">
            
             <li class="nav-item active">
+              <a class="nav-link" href="actualizar.php">Actualizar <span class="sr-only">(current)</span></a>
               <a class="nav-link" href="registro.php">Registrar <span class="sr-only">(current)</span></a>
             </li>  
                   
@@ -97,7 +98,6 @@ $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <tr>
-  <td><?php echo $contador; ?></td>
   <td><?php echo $misdatos["serviceName"]; ?></td>
   <td><?php echo $misdatos["barCode"]; ?></td>
   <td><?php echo $misdatos["serviceNum"]; ?></td>

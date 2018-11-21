@@ -1,7 +1,7 @@
 <?php
 include "db.php";
 
-if(isset($_POST["btnguardar"])){
+if(isset($_POST["btnActualizar"])){
 	$con = connect();
 	$serviceName=$_POST['serviceName'];
 	$barCode=$_POST['barCode'];
@@ -10,7 +10,7 @@ if(isset($_POST["btnguardar"])){
   $orderGrup=$_POST['orderGrup'];
   $dateIntro=date("Y-m-d");
 	
-	$con->query("insert into RecibosComision (serviceName, barCode, serviceNum, pay, dateIntro,texStatus, orderGrup) value ('$serviceName', '$barCode', '$serviceNum','$pay','$dateIntro','$dateIntro','$texStatus', '$orderGrup')");
+	$con->query("insert into Servicios (serviceName, barCode, serviceNum, pay, dateIntro,texStatus, orderGrup) value ('$serviceName', '$barCode', '$serviceNum','$pay','$dateIntro','$dateIntro','$texStatus', '$orderGrup')");
 	header("Location: index.php?option=ok");
 }
 
@@ -24,13 +24,37 @@ if(isset($_POST["btnguardar"])){
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Registrar Recibos - vNova Internet</title>
-    <!-- Bootstrap core CSS -->
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Actualizar Recibos - vNova Internet</title>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
     <!-- Custom styles for this template -->
     <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet">
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+    <script type="text/javascript">
+    $(document).ready(function () {
+       (function($) {
+           $('#ObtenerDatos').keyup(function () {
+                var ValorBusqueda = $(this).val();
+                $.ajax({
+                    type:'POST',
+                    url: 'consultarData.php',
+                    data: ValorBusqueda,
+                    datatype: 'json',
+                })
 
+                // Compruebo si me esta trayendo los valores
+
+                .done(function(data){
+
+                    console.log(data);
+                    var datos2 = JSON.parse(data);
+                    console.log(datos2);
+
+                })
+                    })
+          }(jQuery));
+    });
+    </script> 
   </head>
 
   <body>
@@ -43,8 +67,18 @@ if(isset($_POST["btnguardar"])){
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
+
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Buscar</span>
+          </div>
+          <input id="ObtenerDatos" type="text" class="form-control" placeholder="Codigo de barras" aria-label="Codigo" aria-describedby="basic-addon1">
+        </div>
+
+
           <ul class="navbar-nav mr-auto">
- 
+          
             <li class="nav-item active">
               <a class="nav-link" href="actualizar.php">Actualizar <span class="sr-only">(current)</span></a>
               <a class="nav-link" href="registro.php">Registrar <span class="sr-only">(current)</span></a>
@@ -96,8 +130,8 @@ if(isset($_POST["btnguardar"])){
      </div>
        
        
-    <input type="hidden" name="btnguardar" value="v">
-<input class="btn btn-primary" type="submit" value="Registrar recibo">
+    <input type="hidden" name="btnActualizar" value="v">
+<input class="btn btn-primary" type="submit" value="Actualizar recibo">
              
   </fieldset>
 
