@@ -35,6 +35,7 @@ if(isset($_POST["btnActualizar"])){
        (function($) {
            $('#ObtenerDatos').keyup(function () {
                 var ValorBusqueda = $(this).val();
+                alert( $(this).val());
                 $.ajax({
                     type:'POST',
                     url: 'consultarData.php',
