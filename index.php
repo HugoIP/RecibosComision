@@ -18,9 +18,8 @@ $(document).ready(function () {
    (function($) {
        $('#FiltrarContenido').keyup(function () {
             var ValorBusqueda = new RegExp($(this).val(), 'i');
-            alert($(this).val());
-            alert(ValorBusqueda);
             $('.BusquedaRapida tr').hide();
+            alert($(this).text());
              $('.BusquedaRapida tr').filter(function () {
                 return ValorBusqueda.test($(this).text());
               }).show();
