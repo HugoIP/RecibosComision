@@ -92,7 +92,7 @@ if(isset($_GET["option"])){?>
 <?php
 include "db.php";
 $con = connect();
-$consulta = "SELECT * FROM RecibosComision";
+$consulta = "SELECT * FROM Servicios";
 $resultado = mysqli_query($con , $consulta);
 $contador=0;
 
@@ -104,7 +104,7 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <td><?php echo $misdatos["serviceNum"]; ?></td>
   <td><?php echo $misdatos["pay"]; ?></td>
   <td><?php echo $misdatos["orderGrup"]; ?></td>
-  <td><?php echo $misdatos["deliver"]; ?></td>
+  <td><?php echo $misdatos["texStatus"]; ?></td>
   </tr>
           
 <?php }?>          
