@@ -22,15 +22,22 @@ $(document).ready(function () {
        $('#FiltrarContenido').keyup(function () {
         var contentString= String($(this).val());
         if(contentString.length==30)
+        {
             getServiceNum = contentString.substring(2,13);
             getPay = contentString.substring(20,29);
             getDate = contentString.substring(14,15)+"-"+contentString.substring(16,17)+""+contentString.substring(18,19);
 
             var ValorBusqueda = new RegExp(getServiceNum, 'i');
+
             $('.BusquedaRapida tr').hide();
              $('.BusquedaRapida tr').filter(function () {
                 return ValorBusqueda.test($(this).text());
               }).show();
+        }
+        else
+        {
+          $('.BusquedaRapida tr').hide();
+        }
                 })
       }(jQuery));
 });
