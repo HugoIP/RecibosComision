@@ -80,17 +80,18 @@ if(isset($_GET["option"])){?>
         <thead>
           <tr>
             <th>Nombre</th>
+            <th>Codigo de barras</th>
             <th>Servicio</th>            
             <th>Monto</th>
-            <th>Entregado</th>
             <th>Grupo</th>
+            <th>Entregado</th>
           </tr>
         </thead>
         <tbody class="BusquedaRapida">
 <?php
 include "db.php";
 $con = connect();
-$consulta = "SELECT * FROM recibos";
+$consulta = "SELECT * FROM RecibosComision";
 $resultado = mysqli_query($con , $consulta);
 $contador=0;
 
