@@ -93,7 +93,7 @@ if(isset($_POST["btnActualizar"])){
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Buscar</span>
+    <span class="input-group-text" id="basic-addon1">Buscar BarCode</span>
   </div>
   <input id="ObtenerDatos" type="text" class="form-control" placeholder="Codigo de barras" aria-label="Alumno" aria-describedby="basic-addon1">
 </div>
