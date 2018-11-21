@@ -21,7 +21,7 @@ $(document).ready(function () {
   var getDate;
    (function($) {
        $('.servi').click(function () {
-          var lastCont=$(this > "#NAME").val();
+          var lastCont=$(".servi > #NAME").val();
            $("#NAME").html('<input class="form-control mr-sm-2" value="'+lastCont+'" type="text">');
        });
        $('#FiltrarContenido').keyup(function () {
