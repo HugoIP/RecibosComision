@@ -74,7 +74,7 @@ if(isset($_GET["option"])){?>
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Buscar</span>
   </div>
-  <input id="FiltrarContenido" type="text" class="form-control" placeholder="Ingrese Nombre de Alumno" aria-label="Alumno" aria-describedby="basic-addon1">
+  <input id="FiltrarContenido" type="text" class="form-control" placeholder="Ingrese Nombre del servicio" aria-label="Alumno" aria-describedby="basic-addon1">
 </div>
 	    <table class="table table-hover">
         <thead>
@@ -82,8 +82,8 @@ if(isset($_GET["option"])){?>
             <th>Nombre</th>
             <th>Servicio</th>            
             <th>Monto</th>
-            <th>Grupo</th>
             <th>Entregado</th>
+            <th>Grupo</th>
           </tr>
         </thead>
         <tbody class="BusquedaRapida">
@@ -97,13 +97,12 @@ $contador=0;
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <tr>
   <td><?php echo $contador; ?></td>
-  serviceName, barCode, serviceNum, pay, orderGrup
   <td><?php echo $misdatos["serviceName"]; ?></td>
   <td><?php echo $misdatos["barCode"]; ?></td>
   <td><?php echo $misdatos["serviceNum"]; ?></td>
   <td><?php echo $misdatos["pay"]; ?></td>
   <td><?php echo $misdatos["orderGrup"]; ?></td>
-  <td><?php echo $misdatos["ship"]; ?></td>
+  <td><?php echo $misdatos["deliver"]; ?></td>
   </tr>
           
 <?php }?>          

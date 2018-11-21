@@ -110,7 +110,7 @@ if(isset($_POST["btnguardar"])){
 </div><!-- Fin container -->
     <footer class="footer">
       <div class="container">
-        <span class="text-muted"><p>Ayuda <a href="https://www.google.com/" target="_blank">Google</a></p></span>
+        <span class="text-muted"><p>Ayuda <a href="https://www.google.com/" target="_blank">vNova Internet</a></p></span>
       </div>
     </footer>
 
