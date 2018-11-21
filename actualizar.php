@@ -20,6 +20,9 @@ $(document).ready(function () {
   var getPay;
   var getDate;
    (function($) {
+       $('#servi').click(function () {
+          alert("Editar");
+       }
        $('#FiltrarContenido').keyup(function () {
         var contentString= String($(this).val());
         if(contentString.length==30)
@@ -116,9 +119,9 @@ $resultado = mysqli_query($con , $consulta);
 $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
-<tr>
+<tr id="servi">
   <td>
-  <td id=<?php echo ("NAME".$misdatos["serviceNum"]); ?>> <?php echo $misdatos["serviceName"]; ?></td>
+  <td id=<?php echo ("NAME".$misdatos["serviceNum"]); ?>><?php echo $misdatos["serviceName"]; ?></td>
   <td id=<?php echo ("BARC".$misdatos["serviceNum"]); ?>><?php echo $misdatos["barCode"]; ?></td>
   <td id=<?php echo ("SNUM".$misdatos["serviceNum"]); ?>><?php echo $misdatos["serviceNum"]; ?></td>
   <td id=<?php echo ("SPAY".$misdatos["serviceNum"]); ?>><?php echo $misdatos["pay"]; ?></td>
