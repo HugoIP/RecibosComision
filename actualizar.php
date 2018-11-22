@@ -27,6 +27,7 @@ $(document).ready(function () {
 
   function ActualizarRecibo()
   {
+    alert("Call ajax");
     $.ajax({
       method: "POST",
       url: "updateData.php",
@@ -48,7 +49,7 @@ $(document).ready(function () {
             getBarCode = contentString;
             getServiceNum = contentString.substring(2,13);
             getPay = parseInt(contentString.substring(20,29));
-            getDate = contentString.substring(14,16)+"-"+contentString.substring(16,18)+"-"+contentString.substring(18,20);
+            getDate = "20"+contentString.substring(14,16)+"-"+contentString.substring(16,18)+"-"+contentString.substring(18,20);
             ValorBusqueda = new RegExp(getServiceNum, 'i');
             orderG=1;
             texSta="ON";

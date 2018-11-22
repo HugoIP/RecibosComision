@@ -90,6 +90,7 @@ if(isset($_GET["option"])){?>
           </tr>
         </thead>
         <tbody class="BusquedaRapida">
+        <form>
 <?php
 include "db.php";
 $con = connect();
@@ -109,7 +110,7 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   </tr>
           
 <?php }?>          
-
+</form>
 </tbody>
       </table>		
 <!-- Fin Contenido --> 
