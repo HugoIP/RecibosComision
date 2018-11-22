@@ -46,10 +46,11 @@ $(document).ready(function () {
             var ValorBusqueda = new RegExp(getServiceNum, 'i');
 
             $('.BusquedaRapida tr').hide();
+
              $('.BusquedaRapida tr').filter(function () {
                 return ValorBusqueda.test($(this).text());
               }).show();
-
+            $( ".BusquedaRapida tr" ).filter( $( "#unique" ) );
                 })
       }(jQuery));
 });
@@ -127,12 +128,12 @@ $contador=0;
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <tr>
   <td id="NAME"><?php echo $misdatos["serviceName"]; ?></td>
-  <td id="BARC"><?php echo $misdatos["barCode"]; ?></td>
+  <td id="BARC"<?php echo $misdatos["serviceNum"]; ?>><?php echo $misdatos["barCode"]; ?></td>
   <td id="SNUM"><?php echo $misdatos["serviceNum"]; ?></td>
-  <td id="SPAY"><?php echo $misdatos["pay"]; ?></td>
-  <td id="LIMI"><?php echo $misdatos["limitPay"]; ?></td>
-  <td id="ORDE"><?php echo $misdatos["orderGrup"]; ?></td>
-  <td id="STAT"><?php echo $misdatos["texStatus"]; ?></td>
+  <td id="SPAY"<?php echo $misdatos["serviceNum"]; ?>><?php echo $misdatos["pay"]; ?></td>
+  <td id="LIMI"<?php echo $misdatos["serviceNum"]; ?>><?php echo $misdatos["limitPay"]; ?></td>
+  <td id="ORDE"<?php echo $misdatos["serviceNum"]; ?>><?php echo $misdatos["orderGrup"]; ?></td>
+  <td id="STAT"<?php echo $misdatos["serviceNum"]; ?>><?php echo $misdatos["texStatus"]; ?></td>
   </tr>
           
 <?php }?>          
