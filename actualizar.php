@@ -40,6 +40,13 @@ $(document).ready(function () {
              $('.BusquedaRapida tr').find(":hidden").remove();
            
             $(".BusquedaRapida tr #BARC" ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">');
+            $(".BusquedaRapida tr #SPAY" ).html('<input class="form-control mr-sm-2" type="text" value="'+getPay+'">');
+            $(".BusquedaRapida tr #LIMI" ).html('<input class="form-control mr-sm-2" type="text" value="'+getDate+'">');
+            $(".BusquedaRapida tr #ORDE" ).html('<input class="form-control mr-sm-2" type="text" value="'+1+'">');
+            $(".BusquedaRapida tr #STAT" ).html('<input class="form-control mr-sm-2" type="text" value="'+"IN"+'">');
+            $(".BusquedaRapida tr #ACTI" ).html('<button class="btn btn-outline-success my-1 my-sm-0" type="submit">Actualizar</button>');
+        }
+        }
         }
         else
         {
@@ -117,6 +124,7 @@ if(isset($_GET["option"])){?>
             <th>Vence</th>
             <th>Grupo</th>
             <th>Entregado</th>
+            <th></th>
           </tr>
         </thead>
         <tbody class="BusquedaRapida">
@@ -136,6 +144,7 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <td id="LIMI"><?php echo $misdatos["limitPay"]; ?></td>
   <td id="ORDE"><?php echo $misdatos["orderGrup"]; ?></td>
   <td id="STAT"><?php echo $misdatos["texStatus"]; ?></td>
+  <td id="ACTI"></td>
   </tr>
           
 <?php }?>          
