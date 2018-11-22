@@ -50,7 +50,7 @@ $(document).ready(function () {
              $('.BusquedaRapida tr').filter(function () {
                 return ValorBusqueda.test($(this).text());
               }).show();
-            $( ".BusquedaRapida tr" ).filter( $( "#unique" ) );
+            $( ".BusquedaRapida tr" ).filter( $( '#BARC'+contentString ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">') );
                 })
       }(jQuery));
 });
