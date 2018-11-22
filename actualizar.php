@@ -22,7 +22,7 @@ $(document).ready(function () {
   var contentString;
    (function($) {
        $('#FiltrarContenido').keyup(function () {
-        var contentString= String($(this).val());
+        contentString= String($(this).val());
         if(contentString.length==30)
         {
             getBarCode = contentString;
@@ -42,6 +42,7 @@ $(document).ready(function () {
              $('.BusquedaRapida tr').filter(function () {
                 return ValorBusqueda.test($(this).text());
               }).show();
+             alert(contentString);
             $( ".BusquedaRapida tr" ).filter( $( '#BARC'+getServiceNum ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">') );
                 })
       }(jQuery));
