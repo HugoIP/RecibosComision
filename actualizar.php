@@ -121,12 +121,12 @@ $contador=0;
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <tr>
   <td id="NAME"><?php echo $misdatos["serviceName"]; ?></td>
-  <td id=<?php echo ('"BARC'.$misdatos["serviceNum"].'"'; ?>><?php echo $misdatos["barCode"]; ?></td>
+  <td id=<?php echo ('"BARC'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["barCode"]; ?></td>
   <td id="SNUM"><?php echo $misdatos["serviceNum"]; ?></td>
-  <td id=<?php echo ('"SPAY'.$misdatos["serviceNum"].'"'; ?>><?php echo $misdatos["pay"]; ?></td>
-  <td id=<?php echo ('"LIMI'.$misdatos["serviceNum"].'"'; ?>><?php echo $misdatos["limitPay"]; ?></td>
-  <td id=<?php echo ('"ORDE'.$misdatos["serviceNum"].'"'; ?>><?php echo $misdatos["orderGrup"]; ?></td>
-  <td id=<?php echo ('"STAT'.$misdatos["serviceNum"].'"'; ?>><?php echo $misdatos["texStatus"]; ?></td>
+  <td id=<?php echo ('"SPAY'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["pay"]; ?></td>
+  <td id=<?php echo ('"LIMI'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["limitPay"]; ?></td>
+  <td id=<?php echo ('"ORDE'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["orderGrup"]; ?></td>
+  <td id=<?php echo ('"STAT'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["texStatus"]; ?></td>
   </tr>
           
 <?php }?>          
