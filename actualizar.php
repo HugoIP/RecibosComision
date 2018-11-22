@@ -44,7 +44,8 @@ $(document).ready(function () {
               }).show();
              $('.BusquedaRapida tr').find(":hidden").remove();
 
-            $( ".BusquedaRapida tr" ).find( '#BARC'+getServiceNum ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">'); 
+           alert( $( ".BusquedaRapida tr" ).find( '#BARC'+getServiceNum ));
+           //.html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">'); 
                 })
       }(jQuery));
 });
