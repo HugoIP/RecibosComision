@@ -21,7 +21,26 @@ $(document).ready(function () {
   var getDate;
   var contentString;
   var ValorBusqueda;
+  var orderG;
+  var texSta;
+
+
+  function ActualizarRecibo()
+  {
+    $.ajax({
+      method: "POST",
+      url: "updateData.php",
+      data: { serviceNum:getServiceNum, barCode: getBarCode, pay: getPay, limitPay:getDate, orderGrup:orderG, texStatus:texSta }
+    })
+      .done(function( msg ) {
+        alert( "Data Saved: " + msg );
+      });
+  }
    (function($) {
+      $( "#updateData" ).submit(function( event ) {
+        ActualizarRecibo();
+        event.preventDefault();
+      });
        $('#FiltrarContenido').keyup(function () {
         contentString= String($(this).val());
         if(contentString.length==30)
@@ -31,6 +50,8 @@ $(document).ready(function () {
             getPay = parseInt(contentString.substring(20,29));
             getDate = contentString.substring(14,16)+"-"+contentString.substring(16,18)+"-"+contentString.substring(18,20);
             ValorBusqueda = new RegExp(getServiceNum, 'i');
+            orderG=1;
+            texSta="ON";
 
             $('.BusquedaRapida tr').hide();
 
@@ -42,9 +63,9 @@ $(document).ready(function () {
             $(".BusquedaRapida tr #BARC" ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">');
             $(".BusquedaRapida tr #SPAY" ).html('<input class="form-control mr-sm-2" type="text" value="'+getPay+'">');
             $(".BusquedaRapida tr #LIMI" ).html('<input class="form-control mr-sm-2" type="text" value="'+getDate+'">');
-            $(".BusquedaRapida tr #ORDE" ).html('<input class="form-control mr-sm-2" type="text" value="'+1+'">');
-            $(".BusquedaRapida tr #STAT" ).html('<input class="form-control mr-sm-2" type="text" value="'+"IN"+'">');
-            $(".BusquedaRapida tr #ACTI" ).html('<button class="btn btn-outline-success my-1 my-sm-0" type="submit">Actualizar</button>');
+            $(".BusquedaRapida tr #ORDE" ).html('<input class="form-control mr-sm-2" type="text" value="'+orderG+'">');
+            $(".BusquedaRapida tr #STAT" ).html('<input class="form-control mr-sm-2" type="text" value="'+texSta+'">');
+            $(".BusquedaRapida tr #ACTI" ).html('<button id="updateData" class="btn btn-outline-success my-1 my-sm-0" type="submit">Actualizar</button>');
         }
         else
         {
@@ -60,6 +81,7 @@ $(document).ready(function () {
               }).show();            
                 })
       }(jQuery));
+  }
 });
 </script> 
   </head>
