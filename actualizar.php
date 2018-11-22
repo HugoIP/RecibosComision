@@ -81,7 +81,6 @@ $(document).ready(function () {
               }).show();            
                 })
       }(jQuery));
-  }
 });
 </script> 
   </head>
