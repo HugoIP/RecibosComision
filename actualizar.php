@@ -19,9 +19,13 @@ $(document).ready(function () {
   var getServiceNum;
   var getPay;
   var getDate;
+  var contentString;
    (function($) {
-       $('.servi').click(function () {
-          var lastCont=$("#NAME").text();
+       $('#BARC').click(function () {
+          if(contentString.length==30)
+          {
+            $('#BARC').html('<input class="form-control mr-sm-2" type="text" value="'+contentString'+">');
+          }
 
        });
        $('#FiltrarContenido').keyup(function () {
