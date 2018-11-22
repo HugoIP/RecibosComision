@@ -42,8 +42,7 @@ $(document).ready(function () {
              $('.BusquedaRapida tr').filter(function () {
                 return ValorBusqueda.test($(this).text());
               }).show();
-             alert(contentString);
-            $( ".BusquedaRapida tr" ).filter( $( '#BARC'+getServiceNum ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">') );
+            $( ".BusquedaRapida tr" ).filter( function () { $( '#BARC'+getServiceNum ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">');  });
                 })
       }(jQuery));
 });
@@ -120,9 +119,9 @@ $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <tr>
-  <td id="NAME"><?php echo $misdatos["serviceName"]; ?></td>
+  <td id=<?php echo ('"NAME'.$misdatos["serviceNum"].'"'); ?></td>
   <td id=<?php echo ('"BARC'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["barCode"]; ?></td>
-  <td id="SNUM"><?php echo $misdatos["serviceNum"]; ?></td>
+  <td id=<?php echo ('"SNUM'.$misdatos["serviceNum"].'"'); ?></td>
   <td id=<?php echo ('"SPAY'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["pay"]; ?></td>
   <td id=<?php echo ('"LIMI'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["limitPay"]; ?></td>
   <td id=<?php echo ('"ORDE'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["orderGrup"]; ?></td>
