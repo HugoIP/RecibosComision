@@ -119,9 +119,9 @@ $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <tr>
-  <td id=<?php echo ('"NAME'.$misdatos["serviceNum"].'"'); ?></td>
+  <td id=<?php echo ('"NAME'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["serviceName"]; ?></td>
   <td id=<?php echo ('"BARC'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["barCode"]; ?></td>
-  <td id=<?php echo ('"SNUM'.$misdatos["serviceNum"].'"'); ?></td>
+  <td id=<?php echo ('"SNUM'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["serviceNum"]; ?></td>
   <td id=<?php echo ('"SPAY'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["pay"]; ?></td>
   <td id=<?php echo ('"LIMI'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["limitPay"]; ?></td>
   <td id=<?php echo ('"ORDE'.$misdatos["serviceNum"].'"'); ?>><?php echo $misdatos["orderGrup"]; ?></td>
