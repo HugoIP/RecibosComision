@@ -24,7 +24,7 @@ $(document).ready(function () {
        $('#BARC').click(function () {
           if(contentString.length==30)
           {
-            $('#BARC').html('<input class="form-control mr-sm-2" type="text" value="'+contentString'+">');
+            $('#BARC').html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">');
           }
 
        });
