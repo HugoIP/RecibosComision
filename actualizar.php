@@ -22,6 +22,7 @@ $(document).ready(function () {
   var contentString;
    (function($) {
        $('#BARC').click(function () {
+        alert(contentString);
           if(contentString.length==30)
           {
             $('#BARC').html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">');
@@ -124,7 +125,7 @@ $resultado = mysqli_query($con , $consulta);
 $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
-<tr class="servi">
+<tr>
   <td id="NAME"><?php echo $misdatos["serviceName"]; ?></td>
   <td id="BARC"><?php echo $misdatos["barCode"]; ?></td>
   <td id="SNUM"><?php echo $misdatos["serviceNum"]; ?></td>
