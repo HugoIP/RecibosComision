@@ -21,14 +21,6 @@ $(document).ready(function () {
   var getDate;
   var contentString;
    (function($) {
-       $('#BARC').click(function () {
-        alert(contentString);
-          if(contentString.length==30)
-          {
-            $('#BARC').html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">');
-          }
-
-       });
        $('#FiltrarContenido').keyup(function () {
         var contentString= String($(this).val());
         if(contentString.length==30)
@@ -50,7 +42,7 @@ $(document).ready(function () {
              $('.BusquedaRapida tr').filter(function () {
                 return ValorBusqueda.test($(this).text());
               }).show();
-            $( ".BusquedaRapida tr" ).filter( $( '#BARC'+contentString ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">') );
+            $( ".BusquedaRapida tr" ).filter( $( '#BARC'+getServiceNum ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">') );
                 })
       }(jQuery));
 });
