@@ -20,6 +20,7 @@ $(document).ready(function () {
   var getPay;
   var getDate;
   var contentString;
+  var ValorBusqueda:
    (function($) {
        $('#FiltrarContenido').keyup(function () {
         contentString= String($(this).val());
@@ -29,6 +30,16 @@ $(document).ready(function () {
             getServiceNum = contentString.substring(2,13);
             getPay = parseInt(contentString.substring(20,29));
             getDate = contentString.substring(14,15)+"-"+contentString.substring(16,17)+""+contentString.substring(18,19);
+            ValorBusqueda = new RegExp(getServiceNum, 'i');
+
+            $('.BusquedaRapida tr').hide();
+
+             $('.BusquedaRapida tr').filter(function () {
+                return ValorBusqueda.test($(this).text());
+              }).show();
+             $('.BusquedaRapida tr').find(":hidden").remove();
+           
+            $(".BusquedaRapida tr #BARC" ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">');
         }
         else
         {
@@ -41,11 +52,7 @@ $(document).ready(function () {
 
              $('.BusquedaRapida tr').filter(function () {
                 return ValorBusqueda.test($(this).text());
-              }).show();
-             $('.BusquedaRapida tr').find(":hidden").remove();
-             alert("#BARC" );
-           alert( $( ".BusquedaRapida tr #BARC" ).html());
-           //.html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">'); 
+              }).show();            
                 })
       }(jQuery));
 });
