@@ -26,8 +26,7 @@ $(document).ready(function () {
 
 
   function ActualizarRecibo()
-  {
-    alert("Call ajax");
+  { 
     $.ajax({
       method: "POST",
       url: "updateData.php",
@@ -38,7 +37,7 @@ $(document).ready(function () {
       });
   }
    (function($) {
-      $( "#updateData" ).submit(function( event ) {
+      $( "form" ).submit(function( event ) {
         ActualizarRecibo();
         event.preventDefault();
       });
