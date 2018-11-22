@@ -20,7 +20,7 @@ $(document).ready(function () {
   var getPay;
   var getDate;
   var contentString;
-  var ValorBusqueda:
+  var ValorBusqueda;
    (function($) {
        $('#FiltrarContenido').keyup(function () {
         contentString= String($(this).val());
