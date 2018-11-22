@@ -46,8 +46,6 @@ $(document).ready(function () {
             $(".BusquedaRapida tr #STAT" ).html('<input class="form-control mr-sm-2" type="text" value="'+"IN"+'">');
             $(".BusquedaRapida tr #ACTI" ).html('<button class="btn btn-outline-success my-1 my-sm-0" type="submit">Actualizar</button>');
         }
-        }
-        }
         else
         {
           getServiceNum= contentString;
