@@ -43,7 +43,8 @@ $(document).ready(function () {
                 return ValorBusqueda.test($(this).text());
               }).show();
              $('.BusquedaRapida tr').find(":hidden").remove();
-            $( ".BusquedaRapida tr" ).filter( function () { $( '#BARC'+getServiceNum ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">');  });
+
+            $( ".BusquedaRapida tr" ).find( '#BARC'+getServiceNum ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">'); 
                 })
       }(jQuery));
 });
