@@ -75,7 +75,7 @@ $(document).ready(function () {
             $(".BusquedaRapida tr #LIMI" ).html('<input class="form-control mr-sm-2" type="text" value="'+getDate+'">');
             $(".BusquedaRapida tr #ORDE" ).html('<input class="form-control mr-sm-2" type="text" value="'+orderG+'">');
             $(".BusquedaRapida tr #STAT" ).html('<input class="form-control mr-sm-2" type="text" value="'+texSta+'">');
-            $(".BusquedaRapida tr #ACTI" ).html('<div id="updateData" class="btn btn-outline-success my-1 my-sm-0">Actualizar</div>');
+            $(".updateDat" ).html('<div id="updateData" class="btn btn-outline-success my-1 my-sm-0">Actualizar</div>');
         }
         else
         {
@@ -153,11 +153,9 @@ if(isset($_GET["option"])){?>
             <th>Vence</th>
             <th>Grupo</th>
             <th>Entregado</th>
-            <th></th>
           </tr>
         </thead>
         <tbody class="BusquedaRapida">
-    <form>
 <?php
 include "db.php";
 $con = connect();
@@ -174,11 +172,8 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <td id="LIMI"><?php echo $misdatos["limitPay"]; ?></td>
   <td id="ORDE"><?php echo $misdatos["orderGrup"]; ?></td>
   <td id="STAT"><?php echo $misdatos["texStatus"]; ?></td>
-  <td id="ACTI"></td>
-  </tr>
-          
+  </tr>    
 <?php }?>          
-</form>
 </tbody>
       </table>		
 <!-- Fin Contenido --> 
@@ -187,7 +182,7 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 
 
 </div><!-- Fin row -->
-
+<div id="updateDat"></div>
 
 </div><!-- Fin container -->
     <footer class="footer">
