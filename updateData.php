@@ -11,9 +11,9 @@ if(isset($_POST['barCode'])){
   $orderGrup=$_POST['orderGrup'];
   $limitPay=$_POST['limitPay'];
 
-	$consulta="UPDATE servicios SET barCode='".$barCode."', dateIntro='".$dateIntro."',texStatus='".$texStatus."', orderGrup='".$orderGrup."', limitPay='".$limitPay."' WHERE serviceNum='".$serviceNum."'";
+	$consulta="UPDATE servicios SET barCode='$barCode', dateIntro='$dateIntro',texStatus='$texStatus', orderGrup='$orderGrup', limitPay='$limitPay' WHERE serviceNum='$serviceNum'";
   mysqli_query($con , $consulta);
-  $sql = "SELECT * FROM servicios WHERE serviceNum='".$serviceNum."'";
+  $sql = "SELECT * FROM servicios WHERE serviceNum='$serviceNum'";
   $result = $conn->query($sql);
 
 
