@@ -37,7 +37,7 @@ $(document).ready(function () {
       data:  ser_data,
         success: function( msg )
         {
-            alert( "Se guardaron los datos: " + "\n" + msg);
+            location.reload();
         }
       });
   }
