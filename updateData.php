@@ -2,16 +2,16 @@
 include "db.php";
 $msg="NoProcess";
 echo "init";
-if(isset($_POST['barCode'])){
+if(isset($_GET['barCode'])){
   echo "in _";
 	$con = connect();
 
-  $serviceNum=$_POST['serviceNum'];
-  $barCode=$_POST['barCode'];
+  $serviceNum=$_GET['serviceNum'];
+  $barCode=$_GET['barCode'];
   $dateIntro= date("Y-m-d");
-  $texStatus=$_POST['texStatus'];
-  $orderGrup=$_POST['orderGrup'];
-  $limitPay=$_POST['limitPay'];
+  $texStatus=$_GET['texStatus'];
+  $orderGrup=$_GET['orderGrup'];
+  $limitPay=$_GET['limitPay'];
 echo "get";
 	$consulta="UPDATE servicios SET barCode='$barCode', dateIntro='$dateIntro',texStatus='$texStatus', orderGrup='$orderGrup', limitPay='$limitPay' WHERE serviceNum='$serviceNum'";
   mysqli_query($con , $consulta);
