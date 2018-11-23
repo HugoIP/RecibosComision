@@ -1,6 +1,7 @@
 <?php
 include "db.php";
 $msg="NoProcess";
+$msg=$_GET['barCode']);
 if(isset($_GET['barCode'])){
 	$con = connect();
 
@@ -11,10 +12,9 @@ if(isset($_GET['barCode'])){
   $orderGrup=$_GET['orderGrup'];
   $limitPay=$_GET['limitPay'];
 	$consulta="UPDATE Servicios SET 'barCode'=$barCode, 'dateIntro'=$dateIntro,'texStatus'=$texStatus, 'orderGrup'=$orderGrup, 'limitPay'=$limitPay WHERE 'serviceNum'=$serviceNum";
-  //mysqli_query($con,$consulta);
+  mysqli_query($con,$consulta);
    $result = mysqli_query($con,"SELECT * FROM Servicios WHERE serviceNum=$serviceNum");
 
- $i=0;
  while($row = mysqli_fetch_array($result))
  {
     $msg =$msg."    ".$row['barCode'];
