@@ -47,7 +47,7 @@ $(document).ready(function () {
       texSta = $(".BusquedaRapida tr #STAT input").val();
   }
    (function($) {
-      $( ".BusquedaRapida tr #ACTI #updateData" ).click(function( event ) {
+      $( ".BusquedaRapida tr #ACTI #updateData" ).click(function( ) {
         ActualizarRecibo();
         event.preventDefault();
       });
@@ -75,7 +75,7 @@ $(document).ready(function () {
             $(".BusquedaRapida tr #LIMI" ).html('<input class="form-control mr-sm-2" type="text" value="'+getDate+'">');
             $(".BusquedaRapida tr #ORDE" ).html('<input class="form-control mr-sm-2" type="text" value="'+orderG+'">');
             $(".BusquedaRapida tr #STAT" ).html('<input class="form-control mr-sm-2" type="text" value="'+texSta+'">');
-            $(".BusquedaRapida tr #ACTI" ).html('<button id="updateData" class="btn btn-outline-success my-1 my-sm-0" type="submit">Actualizar</button>');
+            $(".BusquedaRapida tr #ACTI" ).html('<div id="updateData" class="btn btn-outline-success my-1 my-sm-0">Actualizar</div>');
         }
         else
         {
