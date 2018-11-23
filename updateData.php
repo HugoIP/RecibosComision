@@ -17,21 +17,21 @@ if(isset($_POST['barCode'])){
   $result = $conn->query($sql);
 
 
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {  
-//name, telefono, email, Dia, Mes, UltimoCelebrado
-        $barCode = $row['barCode'];
-      
-    }
-    $msg= $barCode;
-}
-else
-{
-  $msg= "Error";
+  if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {  
+  //name, telefono, email, Dia, Mes, UltimoCelebrado
+          $barCode = $row['barCode'];
+        
+      }
+      $msg= $barCode;
+  }
+  else
+  {
+    $msg= "Error";
+  }
 }
 echo $msg;
-$conn->close();
   
-}
+
 
 ?>
