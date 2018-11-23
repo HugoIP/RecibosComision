@@ -2,7 +2,7 @@
 error_reporting(E_ALL); 
 ini_set("display_errors", 1); 
 include "db.php";
-$msg="No procces "
+$msg="No procces ";
 if(isset($_GET['barCode'])){
 	$con = connect();
   $msg=$msg." if ";
