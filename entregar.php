@@ -37,7 +37,7 @@ $(document).ready(function () {
       data:  ser_data,
         success: function( msg )
         {
-            location.reload();
+            //location.reload();
         }
       });
   }
