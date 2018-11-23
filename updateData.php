@@ -1,5 +1,6 @@
 <?php
 include "db.php";
+$msg="NoProcess";
 
 if(isset($_POST['barCode'])){
 	$con = connect();
@@ -22,12 +23,13 @@ if ($result->num_rows > 0) {
         $barCode = $row['barCode'];
       
     }
-    echo $barCode;
+    $msg= $barCode;
 }
 else
 {
-  echo "Error";
+  $msg= "Error";
 }
+echo $msg;
 $conn->close();
   
 }
