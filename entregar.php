@@ -25,10 +25,10 @@ $(document).ready(function () {
   var texSta;
 
 
-  function ActualizarRecibo()
+  function EntregarRecibo()
   { 
     updateData();
-    var params = {serviceNum:getServiceNum, barCode:getBarCode, pay:getPay,limitPay:getDate, orderGrup:orderG, texStatus:texSta}; // etc.
+    var params = {serviceNum:getServiceNum, barCode:getBarCode, texStatus:texSta, action:"Entrega"}; // etc.
 
     var ser_data = jQuery.param( params );
     $.ajax({
@@ -43,10 +43,11 @@ $(document).ready(function () {
   }
   function updateData()
   {
-      getBarCode = $(".BusquedaRapida tr #BARC input").val();
-      getPay = $(".BusquedaRapida tr #SPAY input").val();
-      getDate = $(".BusquedaRapida tr #LIMI input").val();
-      orderG = $(".BusquedaRapida tr #ORDE input").val();
+      getBarCode = $(".BusquedaRapida tr #BARC").val();
+      getServiceNum = $(".BusquedaRapida tr #SNUM").val();
+      getPay = $(".BusquedaRapida tr #SPAY").val();
+      getDate = $(".BusquedaRapida tr #LIMI").val();
+      orderG = $(".BusquedaRapida tr #ORDE").val();
       texSta = $(".BusquedaRapida tr #STAT input").val();
   }
    (function($) {
@@ -60,7 +61,7 @@ $(document).ready(function () {
             getDate = "20"+contentString.substring(14,16)+"-"+contentString.substring(16,18)+"-"+contentString.substring(18,20);
             ValorBusqueda = new RegExp(getServiceNum, 'i');
             orderG=1;
-            texSta="-No-";
+            texSta="-Si-";
 
             $('.BusquedaRapida tr').hide();
 
@@ -69,15 +70,11 @@ $(document).ready(function () {
               }).show();
              $('.BusquedaRapida tr').find(":hidden").remove();
            
-            $(".BusquedaRapida tr #BARC" ).html('<input class="form-control mr-sm-2" type="text" value="'+contentString+'">');
-            $(".BusquedaRapida tr #SPAY" ).html('<input class="form-control mr-sm-2" type="text" value="'+getPay+'">');
-            $(".BusquedaRapida tr #LIMI" ).html('<input class="form-control mr-sm-2" type="text" value="'+getDate+'">');
-            $(".BusquedaRapida tr #ORDE" ).html('<input class="form-control mr-sm-2" type="text" value="'+orderG+'">');
             $(".BusquedaRapida tr #STAT" ).html('<input class="form-control mr-sm-2" type="text" value="'+texSta+'">');
-            $("#updateDat" ).html('<div id="updateData" class="btn btn-outline-success my-1 my-sm-0">Actualizar</div>');
+            $("#updateDat" ).html('<div id="updateData" class="btn btn-outline-success my-1 my-sm-0">Entregar</div>');
 
             $( "#updateDat #updateData" ).click(function( ) {
-              ActualizarRecibo();
+              EntregarRecibo();
               event.preventDefault();
             });
         }
