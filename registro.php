@@ -27,6 +27,7 @@ if(isset($_POST["btnguardar"])){
     <link rel="icon" href="favicon.ico">
 
     <title>Registrar Recibos - vNova Internet</title>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
