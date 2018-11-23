@@ -41,6 +41,7 @@ $(document).ready(function () {
           <ul class="navbar-nav mr-auto">
            
             <li class="nav-item active">
+            <a class="nav-link" href="entregar.php">Entregar <span class="sr-only">(current)</span></a>
               <a class="nav-link" href="actualizar.php">Actualizar <span class="sr-only">(current)</span></a>
               <a class="nav-link" href="registro.php">Registrar <span class="sr-only">(current)</span></a>
             </li>  
