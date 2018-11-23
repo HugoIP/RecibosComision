@@ -39,41 +39,16 @@ $(document).ready(function () {
   var getPay;
   var getDate;
   var contentString;
-  var ValorBusqueda;
   var orderG;
   var texSta;
   var getName;
 
-  function CheckExist()
-  { 
-    updateData();
-    var params = {serviceNum:getServiceNum, barCode:getBarCode, pay:getPay,limitPay:getDate, orderGrup:orderG, texStatus:texSta}; // etc.
-
-    var ser_data = jQuery.param( params );
-    $.ajax({
-      type: "GET",
-      url: "updateData.php",
-      data:  ser_data,
-        success: function( msg )
-        {
-            location.reload();
-        }
-      });
-  }
-  function updateData()
-  {
-      getBarCode = $(".BusquedaRapida tr #BARC input").val();
-      getPay = $(".BusquedaRapida tr #SPAY input").val();
-      getDate = $(".BusquedaRapida tr #LIMI input").val();
-      orderG = $(".BusquedaRapida tr #ORDE input").val();
-      texSta = $(".BusquedaRapida tr #STAT input").val();
-  }
    (function($) {
        $('#getContenido').keyup(function () {
         contentString= String($(this).val());
         if(contentString.length==30)
         {
-//Validar la existencia previa
+          //Validar la existencia previa
             getBarCode = contentString;
             getServiceNum = contentString.substring(2,14);
             getPay = parseInt(contentString.substring(20,29));
@@ -86,7 +61,7 @@ $(document).ready(function () {
             $("#ORDE" ).val(orderG);
             $("#SPAY" ).val(getPay);
         }
-            
+       })     
       }(jQuery));
 });
 </script> 
