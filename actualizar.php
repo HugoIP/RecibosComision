@@ -7,7 +7,10 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 <title>Actualizar Recibos</title>
-<script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 <!-- Bootstrap core CSS -->
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
