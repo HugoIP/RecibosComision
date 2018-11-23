@@ -43,11 +43,11 @@ $(document).ready(function () {
   }
   function updateData()
   {
-      getBarCode = $(".BusquedaRapida tr #BARC").val();
-      getServiceNum = $(".BusquedaRapida tr #SNUM").val();
-      getPay = $(".BusquedaRapida tr #SPAY").val();
-      getDate = $(".BusquedaRapida tr #LIMI").val();
-      orderG = $(".BusquedaRapida tr #ORDE").val();
+      getBarCode = $(".BusquedaRapida tr #BARC").html();
+      getServiceNum = $(".BusquedaRapida tr #SNUM").html();
+      getPay = $(".BusquedaRapida tr #SPAY").html();
+      getDate = $(".BusquedaRapida tr #LIMI").html();
+      orderG = $(".BusquedaRapida tr #ORDE").html();
       texSta = $(".BusquedaRapida tr #STAT input").val();
   }
    (function($) {
