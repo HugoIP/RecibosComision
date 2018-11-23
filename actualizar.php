@@ -47,7 +47,7 @@ $(document).ready(function () {
       texSta = $(".BusquedaRapida tr #STAT input").val();
   }
    (function($) {
-      $( ".BusquedaRapida tr #ACTI #updateData" ).click(function( ) {
+      $( "#updateData" ).click(function( ) {
         ActualizarRecibo();
         event.preventDefault();
       });
