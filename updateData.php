@@ -10,9 +10,9 @@ if(isset($_GET['barCode'])){
   $texStatus=$_GET['texStatus'];
   $orderGrup=$_GET['orderGrup'];
   $limitPay=$_GET['limitPay'];
-	$consulta="UPDATE Servicios SET barCode='$barCode', dateIntro='$dateIntro',texStatus='$texStatus', orderGrup='$orderGrup', limitPay='$limitPay' WHERE serviceNum='$serviceNum'";
+	$consulta="UPDATE Servicios SET 'barCode'=$barCode, 'dateIntro'=$dateIntro,'texStatus'=$texStatus, 'orderGrup'=$orderGrup, 'limitPay'=$limitPay WHERE 'serviceNum'=$serviceNum";
   mysqli_query($con , $consulta);
-  echo " get 2";
+  
   $msg="Ok";
 }
 echo $msg;
