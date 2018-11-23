@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     var ser_data = jQuery.param( params );
     $.ajax({
-      type: "POST",
+      type: "GET",
       url: "updateData.php",
       data:  ser_data,
         success: function( msg )
