@@ -1,9 +1,12 @@
 <?php
+error_reporting(E_ALL); 
+ini_set("display_errors", 1); 
+
 include "db.php";
 $msg="NoProcess";
 if(isset($_GET['barCode'])){
 	$con = connect();
-$msg=$msg+" if ";
+  $msg=$msg+" if ";
   $serviceNum=$_GET['serviceNum'];
   $barCode=$_GET['barCode'];
   $dateIntro= date("Y-m-d");
