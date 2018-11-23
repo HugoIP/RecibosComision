@@ -3,7 +3,9 @@ include "db.php";
 $msg="NoProcess";
 echo "init";
 if(isset($_POST['barCode'])){
+  echo "in _";
 	$con = connect();
+
   $serviceNum=$_POST['serviceNum'];
   $barCode=$_POST['barCode'];
   $dateIntro= date("Y-m-d");
