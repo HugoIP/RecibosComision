@@ -8,7 +8,7 @@ if(isset($_GET['barCode'])){
   {
     $serviceNum=$_GET['serviceNum'];
     $barCode=$_GET['barCode'];
-    $dateIDeliver= date("Y-m-d");
+    $dateDeliver= date("Y-m-d");
     $texStatus=$_GET['texStatus'];
 
     $consulta="UPDATE Servicios SET barCode='$barCode',dateDeliver='$dateDeliver',texStatus='$texStatus' WHERE serviceNum='$serviceNum'";
