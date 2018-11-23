@@ -28,14 +28,14 @@ $(document).ready(function () {
   function ActualizarRecibo()
   { 
     updateData();
-    alert("call ajax");
     $.ajax({
-      method: "POST",
+      type: "POST",
       url: "updateData.php",
-      data: { serviceNum:getServiceNum, barCode: getBarCode, pay: getPay, limitPay:getDate, orderGrup:orderG, texStatus:texSta }
-    })
-      .done(function( msg ) {
-        alert( "Data Saved: " + msg );
+      data: "serviceNum"=getServiceNum, "barCode"= getBarCode, "pay"= getPay, "limitPay"=getDate, "orderGrup"=orderG, "texStatus"=texSta ,
+        success: function( msg )
+        {
+            alert( "Se guardaron los datos: " + "\n" + msg);
+        }
       });
   }
   function updateData()
@@ -72,7 +72,7 @@ $(document).ready(function () {
             $(".BusquedaRapida tr #ORDE" ).html('<input class="form-control mr-sm-2" type="text" value="'+orderG+'">');
             $(".BusquedaRapida tr #STAT" ).html('<input class="form-control mr-sm-2" type="text" value="'+texSta+'">');
             $("#updateDat" ).html('<div id="updateData" class="btn btn-outline-success my-1 my-sm-0">Actualizar</div>');
-            
+
             $( "#updateDat #updateData" ).click(function( ) {
               ActualizarRecibo();
               event.preventDefault();
