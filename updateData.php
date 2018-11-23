@@ -5,7 +5,7 @@ include "db.php";
 $msg="NoProcess";
 if(isset($_GET['barCode'])){
 	$con = connect();
-  $msg=$msg+" if ";
+  $msg=$msg." if ";
   $serviceNum=$_GET['serviceNum'];
   $barCode=$_GET['barCode'];
   $dateIntro= date("Y-m-d");
@@ -25,7 +25,7 @@ if(isset($_GET['barCode'])){
     $msg =$msg."    ".$row['barCode'];
   }
 }
-$msg=$msg+" wi ";
+$msg=$msg." wi ";
 mysqli_close($con);
 echo $msg;
   
