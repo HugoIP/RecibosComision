@@ -5,12 +5,14 @@ if(isset($_POST["btnguardar"])){
 	$con = connect();
 	$serviceName=$_POST['serviceName'];
 	$barCode=$_POST['barCode'];
+  $limitPay=$_POST['limitPay'];
 	$serviceNum=$_POST['serviceNum'];
   $pay=$_POST['pay'];
   $orderGrup=$_POST['orderGrup'];
   $dateIntro=date("Y-m-d");
+  $texStatus="-No-";
 	
-	$con->query("insert into RecibosComision (serviceName, barCode, serviceNum, pay, dateIntro,texStatus, orderGrup) value ('$serviceName', '$barCode', '$serviceNum','$pay','$dateIntro','$dateIntro','$texStatus', '$orderGrup')");
+	$con->query("INSERT INTO Servicios (serviceName, barCode, serviceNum, pay, limitPay, dateIntro,texStatus, orderGrup) VALUES ('$serviceName', '$barCode', '$serviceNum','$pay','$limitPay','$dateIntro','$texStatus', '$orderGrup')");
 	header("Location: index.php?option=ok");
 }
 
@@ -30,7 +32,64 @@ if(isset($_POST["btnguardar"])){
     <!-- Custom styles for this template -->
     <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet">
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<script type="text/javascript">
+$(document).ready(function () {
+  var getBarCode;
+  var getServiceNum;
+  var getPay;
+  var getDate;
+  var contentString;
+  var ValorBusqueda;
+  var orderG;
+  var texSta;
+  var getName;
 
+  function CheckExist()
+  { 
+    updateData();
+    var params = {serviceNum:getServiceNum, barCode:getBarCode, pay:getPay,limitPay:getDate, orderGrup:orderG, texStatus:texSta}; // etc.
+
+    var ser_data = jQuery.param( params );
+    $.ajax({
+      type: "GET",
+      url: "updateData.php",
+      data:  ser_data,
+        success: function( msg )
+        {
+            location.reload();
+        }
+      });
+  }
+  function updateData()
+  {
+      getBarCode = $(".BusquedaRapida tr #BARC input").val();
+      getPay = $(".BusquedaRapida tr #SPAY input").val();
+      getDate = $(".BusquedaRapida tr #LIMI input").val();
+      orderG = $(".BusquedaRapida tr #ORDE input").val();
+      texSta = $(".BusquedaRapida tr #STAT input").val();
+  }
+   (function($) {
+       $('#getContenido').keyup(function () {
+        contentString= String($(this).val());
+        if(contentString.length==30)
+        {
+//Validar la existencia previa
+            getBarCode = contentString;
+            getServiceNum = contentString.substring(2,14);
+            getPay = parseInt(contentString.substring(20,29));
+            getDate = "20"+contentString.substring(14,16)+"-"+contentString.substring(16,18)+"-"+contentString.substring(18,20);
+            orderG=1;
+            texSta="-No-";
+           
+
+            $("#SNUM" ).val(getServiceNum);
+            $("#ORDE" ).val(orderG);
+            $("#SPAY" ).val(getPay);
+        }
+            
+      }(jQuery));
+});
+</script> 
   </head>
 
   <body>
@@ -74,25 +133,25 @@ if(isset($_POST["btnguardar"])){
   <fieldset>
         <div class="form-group">
     <label for="serviceName">Nombre:</label>
-    <input required type="text" class="form-control" name="apenom" placeholder="Nombre del servicio" value="">
+    <input id="NAME" required type="text" class="form-control" name="serviceName" placeholder="Nombre Como esta escrito en su recibo" value="">
  	   </div>
         <div class="form-group">
     <label for="barCode">Codigo de barras:</label>
-    <input required class="form-control" type="text" name="barCode"  placeholder="Codigo de barras" value="">
+    <input id="getContenido" required class="form-control" type="text" name="barCode"  placeholder="Codigo de barras" value="">
  	   </div>
 
         <div class="form-group">
     <label for="serviceNum">Numero de servicio:</label>
-    <input required class="form-control" type="serviceNum" name="serviceNum"  placeholder="Numero de servicio 12 d" value="">
+    <input id="SNUM" class="form-control" type="text" name="serviceNum"  placeholder="Numero de servicio 12 d" value="">
  	   </div>
+     <div class="form-group">
+    <label for="pay">Cantidad:</label>
+    <input id="SPAY" class="form-control" type="text" name="pay"  placeholder="Monto" value="">
+     </div>
        
        <div class="form-group">
-    <label for="pay">Cantidad:</label>
-    <input required class="form-control" type="pay" name="pay"  placeholder="Cantidad a pagar" value="">
-     </div>
-     <div class="form-group">
-    <label for="orderGrup">Cantidad:</label>
-    <input required class="form-control" type="orderGrup" name="orderGrup"  placeholder="Grupo" value="">
+    <label for="pay">Grupo:</label>
+    <input id="ORDE" class="form-control" type="text" name="orderGrup"  placeholder="Cantidad a pagar" value="1">
      </div>
        
        
