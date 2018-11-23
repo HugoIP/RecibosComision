@@ -1,7 +1,7 @@
 <?php
 include "db.php";
 $msg="NoProcess";
-$msg=$_GET['barCode']);
+$msg=$_GET['barCode'];
 if(isset($_GET['barCode'])){
 	$con = connect();
 
