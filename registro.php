@@ -61,6 +61,7 @@ $(document).ready(function () {
             $("#SNUM" ).val(getServiceNum);
             $("#ORDE" ).val(orderG);
             $("#SPAY" ).val(getPay);
+            $("#LIMI" ).val(getDate);
         }
        })     
       }(jQuery));
@@ -123,6 +124,12 @@ $(document).ready(function () {
      <div class="form-group">
     <label for="pay">Cantidad:</label>
     <input id="SPAY" class="form-control" type="text" name="pay"  placeholder="Monto" value="">
+     </div>
+
+     </div>
+     <div class="form-group">
+    <label for="limitPay">Fecha de vencimiento:</label>
+    <input id="LIMI" class="form-control" type="text" name="limitPay"  placeholder="Vencimiento" value="">
      </div>
        
        <div class="form-group">
