@@ -8,14 +8,13 @@ if(isset($_GET['barCode'])){
   $msg=$msg." if ";
   $serviceNum=$_GET['serviceNum'];
   $barCode=$_GET['barCode'];
+  $pay=$_GET['pay'];
   $dateIntro= date("Y-m-d");
   $texStatus=$_GET['texStatus'];
   $orderGrup=$_GET['orderGrup'];
   $limitPay=$_GET['limitPay'];
 
-  $msg=$msg." = ".$limitPay."  :".$dateIntro."  :".$texStatus."  :".$orderGrup."  :".$serviceNum."  =";
-
-  $consulta="UPDATE Servicios SET barCode='$barCode',limitPay='$limitPay',dateIntro='$dateIntro',texStatus='$texStatus',orderGrup='$orderGrup' WHERE serviceNum='$serviceNum'";
+  $consulta="UPDATE Servicios SET barCode='$barCode', pay='$pay', limitPay='$limitPay',dateIntro='$dateIntro',texStatus='$texStatus',orderGrup='$orderGrup' WHERE serviceNum='$serviceNum'";
 	//$consulta="UPDATE Servicios SET barCode='$barCode', limitPay=$limitPay, dateIntro=$dateIntro, texStatus=$texStatus, orderGrup=$orderGrup WHERE serviceNum=$serviceNum";
   mysqli_query($con,$consulta);
   mysqli_close($con);
