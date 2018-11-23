@@ -15,9 +15,9 @@ if(isset($_GET['barCode'])){
 
   $msg=$msg." = ".$limitPay."  :".$dateIntro."  :".$texStatus."  :".$orderGrup."  :".$serviceNum."  =";
 
-	$consulta="UPDATE Servicios SET barCode=$barCode, limitPay=$limitPay, dateIntro=$dateIntro, texStatus=$texStatus, orderGrup=$orderGrup WHERE serviceNum=$serviceNum";
+  $consulta="UPDATE Servicios SET barCode='$barCode' WHERE serviceNum=$serviceNum";
+	//$consulta="UPDATE Servicios SET barCode='$barCode', limitPay=$limitPay, dateIntro=$dateIntro, texStatus=$texStatus, orderGrup=$orderGrup WHERE serviceNum=$serviceNum";
   mysqli_query($con,$consulta);
-  $msg=$msg." Up ";
   mysqli_close($con);
   $con = connect();
    $result = mysqli_query($con,"SELECT * FROM Servicios WHERE serviceNum=$serviceNum");
