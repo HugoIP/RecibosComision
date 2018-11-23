@@ -27,6 +27,8 @@ $(document).ready(function () {
 
   function ActualizarRecibo()
   { 
+    updateData();
+    alert("call ajax");
     $.ajax({
       method: "POST",
       url: "updateData.php",
@@ -36,8 +38,16 @@ $(document).ready(function () {
         alert( "Data Saved: " + msg );
       });
   }
+  function updateData()
+  {
+      getBarCode = $(".BusquedaRapida tr #BARC input").val();
+      getPay = $(".BusquedaRapida tr #SPAY input").val();
+      getDate = $(".BusquedaRapida tr #LIMI input").val();
+      orderG = $(".BusquedaRapida tr #ORDE input").val();
+      texSta = $(".BusquedaRapida tr #STAT input").val();
+  }
    (function($) {
-      $( "form" ).submit(function( event ) {
+      $( "#updateData" ).click(function( event ) {
         ActualizarRecibo();
         event.preventDefault();
       });
@@ -81,6 +91,7 @@ $(document).ready(function () {
               }).show();            
                 })
       }(jQuery));
+  }
 });
 </script> 
   </head>
@@ -147,6 +158,7 @@ if(isset($_GET["option"])){?>
           </tr>
         </thead>
         <tbody class="BusquedaRapida">
+    <form>
 <?php
 include "db.php";
 $con = connect();
@@ -167,7 +179,7 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   </tr>
           
 <?php }?>          
-
+</form>
 </tbody>
       </table>		
 <!-- Fin Contenido --> 
