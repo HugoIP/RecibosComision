@@ -31,7 +31,7 @@ $(document).ready(function () {
     $.ajax({
       type: "POST",
       url: "updateData.php",
-      data: "serviceNum"=getServiceNum, "barCode"= getBarCode, "pay"= getPay, "limitPay"=getDate, "orderGrup"=orderG, "texStatus"=texSta ,
+      data: serviceNum:getServiceNum, barCode:getBarCode, pay:getPay,limitPay:getDate, orderGrup:orderG, texStatus:texSta ,
         success: function( msg )
         {
             alert( "Se guardaron los datos: " + "\n" + msg);
