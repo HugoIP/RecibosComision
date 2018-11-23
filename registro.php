@@ -102,7 +102,7 @@ $(document).ready(function () {
  <hr>
 
 <div class="row">
-  <div class="col-12 col-md-8">
+  <div class="col-12 col-md-6">
 
    <!-- Contenido --> 
 
@@ -127,7 +127,6 @@ $(document).ready(function () {
     <input id="SPAY" class="form-control" type="text" name="pay"  placeholder="Monto" value="">
      </div>
 
-     </div>
      <div class="form-group">
     <label for="limitPay">Fecha de vencimiento:</label>
     <input id="LIMI" class="form-control" type="text" name="limitPay"  placeholder="Vencimiento" value="">
