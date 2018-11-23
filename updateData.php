@@ -1,18 +1,20 @@
 <?php
 include "db.php";
 $msg="NoProcess";
-$msg=$_GET['barCode'];
 if(isset($_GET['barCode'])){
 	$con = connect();
-
+$msg=$msg+" if ";
   $serviceNum=$_GET['serviceNum'];
   $barCode=$_GET['barCode'];
   $dateIntro= date("Y-m-d");
   $texStatus=$_GET['texStatus'];
   $orderGrup=$_GET['orderGrup'];
   $limitPay=$_GET['limitPay'];
-	$consulta="UPDATE Servicios SET 'barCode'=$barCode, 'dateIntro'=$dateIntro,'texStatus'=$texStatus, 'orderGrup'=$orderGrup, 'limitPay'=$limitPay WHERE 'serviceNum'=$serviceNum";
+
+	$consulta="UPDATE Servicios SET barCode=$barCode, dateIntro=$dateIntro,texStatus=$texStatus, orderGrup=$orderGrup, limitPay=$limitPay WHERE serviceNum=$serviceNum";
   mysqli_query($con,$consulta);
+  $msg=$msg+" Up ";
+  mysqli_close($con);
    $result = mysqli_query($con,"SELECT * FROM Servicios WHERE serviceNum=$serviceNum");
 
  while($row = mysqli_fetch_array($result))
@@ -20,6 +22,8 @@ if(isset($_GET['barCode'])){
     $msg =$msg."    ".$row['barCode'];
   }
 }
+$msg=$msg+" wi ";
+mysqli_close($con);
 echo $msg;
   
 
