@@ -1,7 +1,7 @@
 <?php
 include "db.php";
 $msg="NoProcess";
-
+echo "init";
 if(isset($_POST['barCode'])){
 	$con = connect();
   $serviceNum=$_POST['serviceNum'];
@@ -10,12 +10,13 @@ if(isset($_POST['barCode'])){
   $texStatus=$_POST['texStatus'];
   $orderGrup=$_POST['orderGrup'];
   $limitPay=$_POST['limitPay'];
-
+echo "get";
 	$consulta="UPDATE servicios SET barCode='$barCode', dateIntro='$dateIntro',texStatus='$texStatus', orderGrup='$orderGrup', limitPay='$limitPay' WHERE serviceNum='$serviceNum'";
   mysqli_query($con , $consulta);
+  echo "update";
   $sql = "SELECT * FROM servicios WHERE serviceNum='$serviceNum'";
   $result = $conn->query($sql);
-
+  echo "select";
 
   if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {  
