@@ -28,10 +28,13 @@ $(document).ready(function () {
   function ActualizarRecibo()
   { 
     updateData();
+    var params = {serviceNum:getServiceNum, barCode:getBarCode, pay:getPay,limitPay:getDate, orderGrup:orderG, texStatus:texSta}; // etc.
+
+    var ser_data = jQuery.param( params );
     $.ajax({
       type: "POST",
       url: "updateData.php",
-      data: "serviceNum":getServiceNum, "barCode":getBarCode, pay:getPay,limitPay:getDate, orderGrup:orderG, texStatus:texSta ,
+      data:  ser_data,
         success: function( msg )
         {
             alert( "Se guardaron los datos: " + "\n" + msg);
