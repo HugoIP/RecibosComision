@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL); 
 ini_set("display_errors", 1); 
-
 include "db.php";
 $msg="NoProcess";
 if(isset($_GET['barCode'])){
@@ -18,6 +17,7 @@ if(isset($_GET['barCode'])){
   mysqli_query($con,$consulta);
   $msg=$msg+" Up ";
   mysqli_close($con);
+  $con = connect();
    $result = mysqli_query($con,"SELECT * FROM Servicios WHERE serviceNum=$serviceNum");
 
  while($row = mysqli_fetch_array($result))
