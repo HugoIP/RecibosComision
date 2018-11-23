@@ -172,7 +172,7 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <td id="SPAY"><?php echo $misdatos["pay"]; ?></td>
   <td id="LIMI"><?php echo $misdatos["limitPay"]; ?></td>
   <td id="ORDE"><?php echo $misdatos["orderGrup"]; ?></td>
-  <td id="STAT"><?php echo ($misdatos["texStatus"]."  ".$misdatos["dateDeliver"];); ?></td>
+  <td id="STAT"><?php echo ($misdatos["texStatus"]."  ".$misdatos["dateDeliver"]); ?></td>
   </tr>    
 <?php }?>          
 </tbody>
