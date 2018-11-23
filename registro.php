@@ -102,7 +102,7 @@ $(document).ready(function () {
  <hr>
 
 <div class="row">
-  <div class="col-12 col-md-6">
+  <div class="col-12 col-md-8">
 
    <!-- Contenido --> 
 
@@ -121,6 +121,7 @@ $(document).ready(function () {
     <label for="serviceNum">Numero de servicio:</label>
     <input id="SNUM" class="form-control" type="text" name="serviceNum"  placeholder="Numero de servicio 12 d" value="">
  	   </div>
+
      <div class="form-group">
     <label for="pay">Cantidad:</label>
     <input id="SPAY" class="form-control" type="text" name="pay"  placeholder="Monto" value="">
