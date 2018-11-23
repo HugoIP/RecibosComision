@@ -15,7 +15,7 @@ if(isset($_GET['barCode'])){
 
   $msg=$msg." = ".$limitPay."  :".$dateIntro."  :".$texStatus."  :".$orderGrup."  :".$serviceNum."  =";
 
-  $consulta="UPDATE Servicios SET barCode='$barCode' WHERE serviceNum=$serviceNum";
+  $consulta="UPDATE Servicios SET barCode='$barCode',limitPay=$limitPay WHERE serviceNum=$serviceNum";
 	//$consulta="UPDATE Servicios SET barCode='$barCode', limitPay=$limitPay, dateIntro=$dateIntro, texStatus=$texStatus, orderGrup=$orderGrup WHERE serviceNum=$serviceNum";
   mysqli_query($con,$consulta);
   mysqli_close($con);
