@@ -56,7 +56,7 @@ $(document).ready(function () {
         alert(contentString);
         if(contentString.length==30)
         {
-          //Validar la existencia previa
+            //Validar la existencia previa
             getBarCode = contentString;
             getServiceNum = contentString.substring(2,14);
             getPay = parseInt(contentString.substring(20,29));
@@ -83,7 +83,7 @@ $(document).ready(function () {
             $("#SNUM" ).val(getServiceNum);
             $("#ATM" ).val(atm);
             $("#PLAT" ).val(platform);
-            $("#PROV" ).val(provider;
+            $("#PROV" ).val(provider);
             $("#COMI" ).val(comision);
             $("#SPAY" ).val(getPay);
             $("#TOTA" ).val(getPay+ parseInt(comision));
