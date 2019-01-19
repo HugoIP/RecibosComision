@@ -147,7 +147,7 @@ $(document).ready(function () {
      </div>
       <div class="form-group">
     <label for="comi">Comision:</label>
-    <input id="COMI" class="form-control" type="text" name="comi"  placeholder="6.5" value="">
+    <input id="COMI" class="form-control" type="text" name="comi"  placeholder="6.5" value="0">
      </div>
      <div class="form-group">
     <label for="total">Total a pagar:</label>
@@ -155,15 +155,15 @@ $(document).ready(function () {
      </div>
      <div class="form-group">
     <label for="platform">Plataforma de pago:</label>
-    <input id="PLAT" class="form-control" type="text" name="platform"  placeholder="Yastas /  vNova Internet" value="">
+    <input id="PLAT" class="form-control" type="text" name="platform"  placeholder="Yastas /  vNova Internet" value="Y">
      </div>
        <div class="form-group">
     <label for="atm">Cajero:</label>
-    <input id="ATM" type="text" class="form-control" name="atm" placeholder="Daniel" value="">
+    <input id="ATM" type="text" class="form-control" name="atm" placeholder="Daniel" value="D">
      </div>
        <div class="form-group">
     <label for="provider">Tipo de cobro:</label>
-    <input id="PROV" class="form-control" type="text" name="provider"  placeholder="CFE" value="">
+    <input id="PROV" class="form-control" type="text" name="provider"  placeholder="CFE" value="C">
      </div>
        
        
