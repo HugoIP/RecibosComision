@@ -149,7 +149,7 @@ $(document).ready(function () {
      </div>
      <div class="form-group">
     <label for="total">Total a pagar:</label>
-    <input id="TOTA" class="form-control" type="text" name="comi"  placeholder="Total" value="">
+    <input id="TOTA" class="form-control" type="text" name="total"  placeholder="Total" value="">
      </div>
      <div class="form-group">
     <label for="platform">Plataforma de pago:</label>
@@ -165,8 +165,7 @@ $(document).ready(function () {
      </div>
        
        
-    <input type="hidden" name="btnCobrar" value="v">
-<input class="btn btn-primary" type="submit" value="Cobrar recibo">
+<input class="btn btn-primary" name="btnCobrar" type="submit" value="Cobrar recibo">
              
   </fieldset>
 
