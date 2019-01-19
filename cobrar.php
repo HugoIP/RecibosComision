@@ -89,7 +89,7 @@ $(document).ready(function () {
             $("#TOTA" ).val(getPay+ parseInt(comision));
          }
        })     
-      }(jQuery);
+      }(jQuery));
 });
 </script> 
   </head>
