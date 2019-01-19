@@ -53,6 +53,7 @@ $(document).ready(function () {
    (function($) {
        $('#getContenido').keyup(function () {
         contentString= String($(this).val());
+        alert(contentString);
         if(contentString.length==30)
         {
           //Validar la existencia previa
