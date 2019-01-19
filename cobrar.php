@@ -77,7 +77,8 @@ $(document).ready(function () {
               comision="YASTAS";
             }
            
-
+            alert(getServiceNum);
+            alert(atm);
             $("#SNUM" ).val(getServiceNum);
             $("#ATM" ).val(atm);
             $("#PLAT" ).val(platform);
