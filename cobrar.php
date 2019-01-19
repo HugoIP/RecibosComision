@@ -157,7 +157,7 @@ $(document).ready(function () {
      </div>
        <div class="form-group">
     <label for="atm">Cajero:</label>
-    <input id="ATM" required type="text" class="form-control" name="atm" placeholder="Daniel" value="">
+    <input id="ATM" type="text" class="form-control" name="atm" placeholder="Daniel" value="">
      </div>
        <div class="form-group">
     <label for="provider">Tipo de cobro:</label>
