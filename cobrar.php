@@ -61,6 +61,13 @@ $(document).ready(function () {
             getServiceNum = contentString.substring(2,14);
             getPay = parseInt(contentString.substring(20,29));
             getDate = "20"+contentString.substring(14,16)+"-"+contentString.substring(16,18)+"-"+contentString.substring(18,20);
+
+            
+            atm=String($("#ATM" ).val());
+            platform=String($("#PLAT" ).val());
+            provider=String($("#PROV" ).val());
+            comision=String($("#COMI" ).val());
+
             if(atm=="")
             {
               atm="Daniel";
@@ -78,7 +85,6 @@ $(document).ready(function () {
               comision="YASTAS";
             }
            
-            alert(getServiceNum);
             alert(atm);
             $("#SNUM" ).val(getServiceNum);
             $("#ATM" ).val(atm);
@@ -147,7 +153,7 @@ $(document).ready(function () {
      </div>
       <div class="form-group">
     <label for="comi">Comision:</label>
-    <input id="COMI" class="form-control" type="text" name="comi"  placeholder="6.5" value="0">
+    <input id="COMI" class="form-control" type="text" name="comi"  placeholder="6.5" value="">
      </div>
      <div class="form-group">
     <label for="total">Total a pagar:</label>
@@ -155,11 +161,11 @@ $(document).ready(function () {
      </div>
      <div class="form-group">
     <label for="platform">Plataforma de pago:</label>
-    <input id="PLAT" class="form-control" type="text" name="platform"  placeholder="Yastas /  vNova Internet" value="Y">
+    <input id="PLAT" class="form-control" type="text" name="platform"  placeholder="Yastas /  vNova Internet" value="">
      </div>
        <div class="form-group">
     <label for="atm">Cajero:</label>
-    <input id="ATM" type="text" class="form-control" name="atm" placeholder="Daniel" value="D">
+    <input id="ATM" type="text" class="form-control" name="atm" placeholder="Daniel" value="">
      </div>
        <div class="form-group">
     <label for="provider">Tipo de cobro:</label>
