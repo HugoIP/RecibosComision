@@ -141,15 +141,15 @@ $(document).ready(function () {
  	   </div>
      <div class="form-group">
     <label for="pay">Cantidad:</label>
-    <input id="SPAY" class="form-control" type="number" name="pay"  placeholder="Monto" value="">
+    <input id="SPAY" class="form-control" type="text" name="pay"  placeholder="Monto" value="">
      </div>
       <div class="form-group">
     <label for="comi">Comision:</label>
-    <input id="COMI" class="form-control" type="number" name="comi"  placeholder="6.5" value="">
+    <input id="COMI" class="form-control" type="text" name="comi"  placeholder="6.5" value="">
      </div>
      <div class="form-group">
     <label for="total">Total a pagar:</label>
-    <input id="TOTA" class="form-control" type="number" name="comi"  placeholder="Total" value="">
+    <input id="TOTA" class="form-control" type="text" name="comi"  placeholder="Total" value="">
      </div>
      <div class="form-group">
     <label for="platform">Plataforma de pago:</label>
