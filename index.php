@@ -44,7 +44,6 @@ $(document).ready(function () {
               <a class="nav-link" href="cobrar.php">Cobrar <span class="sr-only">(current)</span></a>
               <a class="nav-link" href="entregar.php">Entregar <span class="sr-only">(current)</span></a>
               <a class="nav-link" href="actualizar.php">Actualizar <span class="sr-only">(current)</span></a>
-              <a class="nav-link" href="registro.php">Registrar <span class="sr-only">(current)</span></a>
             </li>  
                   
           </ul>
