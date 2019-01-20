@@ -136,7 +136,7 @@ $(document).ready(function () {
  <hr>
 
 <div class="row">
-  <div class="col-12 col-md-6">
+  <div class="col-10 col-md-6">
 
    <!-- Contenido --> 
  
@@ -152,16 +152,18 @@ $(document).ready(function () {
     </div>
  	   </div>
      <div class="row">
+     <div class="col">
     <label for="pay">Cantidad:</label>
     <input id="SPAY" class="form-control" type="text" name="pay"  placeholder="Monto" value="">
      </div>
-      <div class="row">
+      <div class="col">
     <label for="comi">Comision:</label>
     <input id="COMI" class="form-control" type="text" name="comi"  placeholder="6.5" value="">
      </div>
-     <div class="row">
+     <div class="col">
     <label for="total">Total a pagar:</label>
     <input id="TOTA" class="form-control form-control-danger" type="text" name="total"  placeholder="Total" value="">
+     </div>
      </div>
      <div class="row">
     <label for="platform">Plataforma de pago:</label>
