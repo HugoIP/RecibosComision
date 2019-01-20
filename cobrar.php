@@ -92,7 +92,7 @@ $(document).ready(function () {
             $("#PROV" ).val(provider);
             $("#COMI" ).val(comision);
             $("#SPAY" ).val(getPay);
-            $("#TOTA" ).val(getPay+ parseInt(comision));
+            $("#TOTA" ).val(PARSEiNT(getPay+ parseInt(comision)));
          }
        })     
       }(jQuery));
@@ -169,7 +169,7 @@ $(document).ready(function () {
      </div>
        <div class="form-group">
     <label for="provider">Tipo de cobro:</label>
-    <input id="PROV" class="form-control" type="text" name="provider"  placeholder="CFE" value="C">
+    <input id="PROV" class="form-control" type="text" name="provider"  placeholder="CFE" value="">
      </div>
        
        
