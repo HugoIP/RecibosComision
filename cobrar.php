@@ -58,7 +58,7 @@ $(document).ready(function () {
             //Validar la existencia previa
             getBarCode = contentString;
             getServiceNum = contentString.substring(2,14);
-            getPay = parseInt(contentString.substring(20,29));
+            getPay = parseFloat(contentString.substring(20,29));
             getDate = "20"+contentString.substring(14,16)+"-"+contentString.substring(16,18)+"-"+contentString.substring(18,20);
 
             
@@ -95,7 +95,7 @@ $(document).ready(function () {
             $("#COMI" ).val(comision);
             $("#SPAY" ).val(getPay);
             $("#LOCA" ).val(location);
-            $("#TOTA" ).val(getPay+ parseInt(comision));
+            $("#TOTA" ).val(getPay+ parseFloat(comision));
          }
        })     
       }(jQuery));
