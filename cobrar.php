@@ -82,7 +82,7 @@ $(document).ready(function () {
             }
             if(platform=="")
             {
-              comision="YASTAS";
+              platform="YASTAS";
             }
            
             alert(atm);
@@ -92,7 +92,7 @@ $(document).ready(function () {
             $("#PROV" ).val(provider);
             $("#COMI" ).val(comision);
             $("#SPAY" ).val(getPay);
-            $("#TOTA" ).val(PARSEiNT(getPay+ parseInt(comision)));
+            $("#TOTA" ).val(getPay+ parseInt(comision));
          }
        })     
       }(jQuery));
