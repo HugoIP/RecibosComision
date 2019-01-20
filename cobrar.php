@@ -134,15 +134,15 @@ $(document).ready(function () {
     <!-- Begin page content -->
 
 <div class="container">
- <h1 class="mt-5">Registrar Recibo</h1>
+ <h1 class="mt-5">Cobrar Recibo</h1>
  <hr>
 
 <div class="row">
-  <div class="col-12 col-md-6">
+  <div class="col-6 col-md-6">
 
    <!-- Contenido --> 
 
-<form id="frmLogin" action="" method="post" class="form-inline">
+<form id="frmLogin" action="" method="post">
   <fieldset>
         <div class="form-group" class="d-inline-flex p-2">
     <label for="barCode">Codigo de barras:</label>
