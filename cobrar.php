@@ -53,7 +53,6 @@ $(document).ready(function () {
    (function($) {
        $('#getContenido').keyup(function () {
         contentString= String($(this).val());
-        alert(contentString);
         if(contentString.length==30)
         {
             //Validar la existencia previa
@@ -88,8 +87,7 @@ $(document).ready(function () {
             {
               location="vNova Internet SCV";
             }
-           
-            alert(atm);
+
             $("#SNUM" ).val(getServiceNum);
             $("#ATM" ).val(atm);
             $("#PLAT" ).val(platform);
@@ -143,7 +141,7 @@ $(document).ready(function () {
    <!-- Contenido --> 
 
 <form id="frmLogin" action="" method="post">
-  <fieldset class="col-sm-8">
+  <fieldset class="col-sm-8" class="form-inline">
       <div class="form-group">
     <label for="barCode">Codigo de barras:</label>
     <input id="getContenido" required class="form-control" type="text" name="barCode"  placeholder="Codigo de barras" value="">
