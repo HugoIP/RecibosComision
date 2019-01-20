@@ -142,7 +142,7 @@ $(document).ready(function () {
 
    <!-- Contenido --> 
 
-<form id="frmLogin" action="" method="post">
+<form id="frmLogin" action="" method="post" class="form-inline">
   <fieldset>
         <div class="form-group">
     <label for="barCode">Codigo de barras:</label>
@@ -153,7 +153,7 @@ $(document).ready(function () {
     <input id="SNUM" class="form-control" type="text" name="serviceNum"  placeholder="Numero de servicio 12 d" value="">
  	   </div>
      </fieldset>
-     <fieldset>
+     <fieldset class="border p-2">
      <div class="form-group">
     <label for="pay">Cantidad:</label>
     <input id="SPAY" class="form-control" type="text" name="pay"  placeholder="Monto" value="">
