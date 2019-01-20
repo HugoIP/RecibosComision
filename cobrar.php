@@ -138,12 +138,12 @@ $(document).ready(function () {
  <hr>
 
 <div class="row">
-  <div class="col-6 col-md-6">
+  <div class="col-12 col-md-6">
 
    <!-- Contenido --> 
 
 <form id="frmLogin" action="" method="post">
-  <fieldset>
+  <fieldset class="col-sm-4">
         <div class="form-group" class="d-inline-flex p-2">
     <label for="barCode">Codigo de barras:</label>
     <input id="getContenido" required class="form-control" type="text" name="barCode"  placeholder="Codigo de barras" value="">
@@ -153,7 +153,7 @@ $(document).ready(function () {
     <input id="SNUM" class="form-control" type="text" name="serviceNum"  placeholder="Numero de servicio 12 d" value="">
  	   </div>
      </fieldset>
-     <fieldset class="border p-2">
+     <fieldset class="border p-2" class="form-group row has-danger" class="col-sm-4">
      <div class="form-group">
     <label for="pay">Cantidad:</label>
     <input id="SPAY" class="form-control" type="text" name="pay"  placeholder="Monto" value="">
@@ -164,7 +164,7 @@ $(document).ready(function () {
      </div>
      <div class="form-group">
     <label for="total">Total a pagar:</label>
-    <input id="TOTA" class="form-control" type="text" name="total"  placeholder="Total" value="">
+    <input id="TOTA" class="form-control form-control-danger" type="text" name="total"  placeholder="Total" value="">
      </div>
      </fieldset>
      <fieldset>
