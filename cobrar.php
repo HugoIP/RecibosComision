@@ -141,12 +141,12 @@ $(document).ready(function () {
    <!-- Contenido --> 
 
 <form id="frmLogin" action="" method="post">
-  <fieldset class="col-sm-8" class="form-inline">
+  <fieldset class="col-sm-8" >
       <div class="form-group">
     <label for="barCode">Codigo de barras:</label>
     <input id="getContenido" required class="form-control" type="text" name="barCode"  placeholder="Codigo de barras" value="">
  	   </div>
-        <div class="form-group" class="d-inline-flex p-2">
+        <div class="form-group" class="form-inline">
     <label for="serviceNum">Numero de servicio:</label>
     <input id="SNUM" class="form-control" type="text" name="serviceNum"  placeholder="Numero de servicio 12 d" value="">
  	   </div>
