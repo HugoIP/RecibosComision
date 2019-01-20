@@ -142,13 +142,12 @@ $(document).ready(function () {
  
 <form id="frmLogin" action="" method="post">
       <div class="row">
-      <div class="col">
     <label for="barCode">Codigo de barras:</label>
     <input id="getContenido" required class="form-control" type="text" name="barCode"  placeholder="Codigo de barras" value="">
-    <div class="col">
+    </div>
+    <div class="row">
     <label for="serviceNum">Numero de servicio:</label>
     <input id="SNUM" class="form-control" type="text" name="serviceNum"  placeholder="Numero de servicio 12 d" value="">
-    </div>
  	   </div>
      <div class="row">
     <label for="pay">Cantidad:</label>
