@@ -183,7 +183,7 @@ $(document).ready(function () {
      </div>
        
        
-<input class="btn btn-primary" name="btnCobrar" type="submit" value="Cobrar recibo">
+<input class="btn btn-primary" name="btnCobrar" onClick="form.submit();" value="Cobrar recibo">
              
 
 </form>
