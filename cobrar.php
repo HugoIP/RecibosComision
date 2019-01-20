@@ -84,6 +84,10 @@ $(document).ready(function () {
             {
               platform="YASTAS";
             }
+            if(location=="")
+            {
+              location="vNova Internet SCV";
+            }
            
             alert(atm);
             $("#SNUM" ).val(getServiceNum);
@@ -92,6 +96,7 @@ $(document).ready(function () {
             $("#PROV" ).val(provider);
             $("#COMI" ).val(comision);
             $("#SPAY" ).val(getPay);
+            $("#LOCA" ).val(location);
             $("#TOTA" ).val(getPay+ parseInt(comision));
          }
        })     
@@ -147,6 +152,8 @@ $(document).ready(function () {
     <label for="serviceNum">Numero de servicio:</label>
     <input id="SNUM" class="form-control" type="text" name="serviceNum"  placeholder="Numero de servicio 12 d" value="">
  	   </div>
+     </fieldset>
+     <fieldset>
      <div class="form-group">
     <label for="pay">Cantidad:</label>
     <input id="SPAY" class="form-control" type="text" name="pay"  placeholder="Monto" value="">
@@ -159,6 +166,8 @@ $(document).ready(function () {
     <label for="total">Total a pagar:</label>
     <input id="TOTA" class="form-control" type="text" name="total"  placeholder="Total" value="">
      </div>
+     </fieldset>
+     <fieldset>
      <div class="form-group">
     <label for="platform">Plataforma de pago:</label>
     <input id="PLAT" class="form-control" type="text" name="platform"  placeholder="Yastas /  vNova Internet" value="">
@@ -170,6 +179,10 @@ $(document).ready(function () {
        <div class="form-group">
     <label for="provider">Tipo de cobro:</label>
     <input id="PROV" class="form-control" type="text" name="provider"  placeholder="CFE" value="">
+     </div>
+    <div class="form-group">
+    <label for="location">Lugar:</label>
+    <input id="LOCA" class="form-control" type="text" name="location"  placeholder="vNova Internet SCV" value="">
      </div>
        
        
