@@ -139,46 +139,42 @@ $(document).ready(function () {
   <div class="col-12 col-md-6">
 
    <!-- Contenido --> 
-
+ 
 <form id="frmLogin" action="" method="post">
-  <fieldset class="col-sm-8" >
-      <div class="form-group">
+      <div class="row">
+      <div class="col">
     <label for="barCode">Codigo de barras:</label>
     <input id="getContenido" required class="form-control" type="text" name="barCode"  placeholder="Codigo de barras" value="">
- 	   </div>
-        <div class="form-group" class="form-inline">
+    <div class="col">
     <label for="serviceNum">Numero de servicio:</label>
     <input id="SNUM" class="form-control" type="text" name="serviceNum"  placeholder="Numero de servicio 12 d" value="">
+    </div>
  	   </div>
-     </fieldset>
-     <fieldset class="border p-2" class="form-group row has-danger" class="col-sm-4">
-     <div class="form-group">
+     <div class="row">
     <label for="pay">Cantidad:</label>
     <input id="SPAY" class="form-control" type="text" name="pay"  placeholder="Monto" value="">
      </div>
-      <div class="form-group">
+      <div class="row">
     <label for="comi">Comision:</label>
     <input id="COMI" class="form-control" type="text" name="comi"  placeholder="6.5" value="">
      </div>
-     <div class="form-group">
+     <div class="row">
     <label for="total">Total a pagar:</label>
     <input id="TOTA" class="form-control form-control-danger" type="text" name="total"  placeholder="Total" value="">
      </div>
-     </fieldset>
-     <fieldset>
-     <div class="form-group">
+     <div class="row">
     <label for="platform">Plataforma de pago:</label>
     <input id="PLAT" class="form-control" type="text" name="platform"  placeholder="Yastas /  vNova Internet" value="">
      </div>
-       <div class="form-group">
+       <div class="row">
     <label for="atm">Cajero:</label>
     <input id="ATM" type="text" class="form-control" name="atm" placeholder="Daniel" value="">
      </div>
-       <div class="form-group">
+       <div class="row">
     <label for="provider">Tipo de cobro:</label>
     <input id="PROV" class="form-control" type="text" name="provider"  placeholder="CFE" value="">
      </div>
-    <div class="form-group">
+    <div class="row">
     <label for="location">Lugar:</label>
     <input id="LOCA" class="form-control" type="text" name="location"  placeholder="vNova Internet SCV" value="">
      </div>
@@ -186,7 +182,6 @@ $(document).ready(function () {
        
 <input class="btn btn-primary" name="btnCobrar" type="submit" value="Cobrar recibo">
              
-  </fieldset>
 
 </form>
 
