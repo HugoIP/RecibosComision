@@ -69,7 +69,7 @@ $(document).ready(function () {
 
             if(atm=="")
             {
-              atm="Daniel";
+              atm="Monica";
             }
             if(comision=="")
             {
@@ -171,7 +171,7 @@ $(document).ready(function () {
      </div>
        <div class="row">
     <label for="atm">Cajero:</label>
-    <input id="ATM" type="text" class="form-control" name="atm" placeholder="Daniel" value="">
+    <input id="ATM" type="text" class="form-control" name="atm" placeholder="Monica" value="">
      </div>
        <div class="row">
     <label for="provider">Tipo de cobro:</label>
