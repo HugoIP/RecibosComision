@@ -143,8 +143,8 @@ $(document).ready(function () {
    <!-- Contenido --> 
 
 <form id="frmLogin" action="" method="post">
-  <fieldset class="col-sm-6">
-        <div class="form-group" class="d-inline-flex p-2">
+  <fieldset class="col-sm-8">
+      <div class="form-group">
     <label for="barCode">Codigo de barras:</label>
     <input id="getContenido" required class="form-control" type="text" name="barCode"  placeholder="Codigo de barras" value="">
  	   </div>
