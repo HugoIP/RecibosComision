@@ -13,19 +13,9 @@ if(isset($_POST["btnCobrar"])){
   $dateIntro=date("Y-m-d H:i:s");
   $provider=$_POST['provider'];
   $platform=$_POST['platform'];
-  $con->query("SELECT `serviceNum`, `dateCobro` FROM Cobros WHERE `barCode`='$barCode'");
-  $row_cnt = $con->num_rows;
-  if($row_cnt>0){
 
-    header("Location: cobrar.php?option=existPay");
-  }
-  else
-  {
-     $con->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `
-platform`, `provider`, `dateCobro`) VALUES ('$pay','$serviceNum','$barCode','$atm','$location','$provider','$platform','$dateIntro')");
-    header("Location: cobrar.php?option=ok");
-    
-  }
+  $con->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `platform`, `provider`, `dateCobro`) VALUES ('$pay','$serviceNum','$barCode','$atm','$location','$provider','$platform','$dateIntro')");
+	header("Location: cobrar.php?option=ok");
 }
 
 ?>
@@ -38,7 +28,7 @@ platform`, `provider`, `dateCobro`) VALUES ('$pay','$serviceNum','$barCode','$at
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Cobrar Recibos - vNova Internet</title>
+    <title>Registrar Recibos - vNova Internet</title>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -144,12 +134,7 @@ $(document).ready(function () {
 <div class="container">
  <h1 class="mt-5">Cobrar Recibo</h1>
  <hr>
-<?php
-if($_GET["option"]=="existPay"){?>
- <div class="alert alert-danger" role="alert">
-  <strong>Error!</strong> El pago ya habia sido aplicado
-</div>
-<?php }?>
+
 <div class="row">
   <div class="col-10 col-md-6">
 
