@@ -23,7 +23,7 @@ if(isset($_POST["btnCobrar"])){
   {
      $con->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `
 platform`, `provider`, `dateCobro`) VALUES ('$pay','$serviceNum','$barCode','$atm','$location','$provider','$platform','$dateIntro')");
-    header("Location: cobrar.php?option=ok");
+    header("Location: cobrar.php?option=okoooo");
     
   }
 }
@@ -147,7 +147,7 @@ $(document).ready(function () {
 <?php
 if($_GET["option"]=="existPay"){?>
  <div class="alert alert-danger" role="alert">
-  <strong>Error!</strong> El pago ya habia sido aplicado
+  <strong>Error!</strong> El pago ya habia sido aplicado con anterioridad
 </div>
 <?php }?>
 <div class="row">
