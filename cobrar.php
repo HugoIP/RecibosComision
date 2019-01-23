@@ -15,12 +15,14 @@ if(isset($_POST["btnCobrar"])){
   $platform=$_POST['platform'];
   $con->query("SELECT `serviceNum`, `dateCobro` FROM Cobros WHERE `barCode`='$barCode'");
   $row_cnt = $con->num_rows;
+  echo("Num row ".$row_cnt);
   if($row_cnt>0){
 
     header("Location: cobrar.php?option=existPay");
   }
   else
   {
+
      $con->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `
 platform`, `provider`, `dateCobro`) VALUES ('$pay','$serviceNum','$barCode','$atm','$location','$provider','$platform','$dateIntro')");
     header("Location: cobrar.php?option=okoooo");
