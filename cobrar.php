@@ -14,7 +14,7 @@ if(isset($_POST["btnCobrar"])){
   $dateIntro=date("Y-m-d H:i:s");
   $provider=$_POST['provider'];
   $platform=$_POST['platform'];
-  $result = $con->query("SELECT `serviceNum`, `dateCobro` FROM Cobros WHERE `barCode`='$barCode'");
+  $result = $con->query("SELECT * FROM Cobros WHERE `barCode`='$barCode'");
   $row_cnt = $result->num_rows;
   $result->close();
   if($row_cnt>0){
@@ -158,6 +158,7 @@ if($_GET["option"]=="existPay"){?>
 if($_GET["option"]=="ok"){?>
 <div class="alert alert-success" role="alert">
   <strong>Pago realizado correctamente!</strong>
+</div>
 <?php }?>
 <div class="row">
   <div class="col-10 col-md-6">
