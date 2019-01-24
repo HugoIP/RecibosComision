@@ -17,15 +17,15 @@ if(isset($_POST["btnCobrar"])){
   $result = $con->query("SELECT * FROM Cobros WHERE `barCode`='$barCode'");
   $row_cnt = $result->num_rows;
   $con->close();
-  if($row_cnt>0){
+  if($row_cnt>0)
+  {
 
     header("Location: cobrar.php?option=existPay");
   }
   else
   {
      $cone = connect();
-     $result=$cone->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `
-platform`, `provider`, `dateCobro`) VALUES ('$pay','$serviceNum','$barCode','$atm','$location','$provider','$platform','$dateIntro')");
+     $cone->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `platform`, `provider`, `dateCobro`) VALUES ('$pay','$serviceNum','$barCode','$atm','$location','$provider','$platform','$dateIntro')");
      $cone->close();
     header("Location: cobrar.php?option=ok");
     
