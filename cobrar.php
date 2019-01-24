@@ -23,10 +23,10 @@ if(isset($_POST["btnCobrar"])){
   }
   else
   {
-     $con = connect();
-     $con->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `
+     $mysqliq = connect();
+     $mysqliq->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `
 platform`, `provider`, `dateCobro`) VALUES ('$pay','$serviceNum','$barCode','$atm','$location','$provider','$platform','$dateIntro')");
-     $con->close();
+     $mysqliq->close();
     header("Location: cobrar.php?option=ok");
     
   }
