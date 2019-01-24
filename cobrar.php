@@ -16,16 +16,18 @@ if(isset($_POST["btnCobrar"])){
   $platform=$_POST['platform'];
   $result = $con->query("SELECT `serviceNum`, `dateCobro` FROM Cobros WHERE `barCode`='$barCode'");
   $row_cnt = $result->num_rows;
+  $result->close();
   if($row_cnt>0){
 
     header("Location: cobrar.php?option=existPay");
   }
   else
   {
-    
+     $con = connect();
      $con->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `
 platform`, `provider`, `dateCobro`) VALUES ('$pay','$serviceNum','$barCode','$atm','$location','$provider','$platform','$dateIntro')");
-    header("Location: cobrar.php?option=ok ".$row_cnt);
+     $con->close();
+    header("Location: cobrar.php?option=ok");
     
   }
 }
@@ -149,6 +151,12 @@ $(document).ready(function () {
 <?php
 if($_GET["option"]=="existPay"){?>
  <div class="alert alert-danger" role="alert">
+  <strong>Error!</strong> El pago ya habia sido aplicado con anterioridad
+</div>
+<?php }?>
+<?php
+if($_GET["option"]=="ok"){?>
+<div class="alert alert-success" role="alert">
   <strong>Error!</strong> El pago ya habia sido aplicado con anterioridad
 </div>
 <?php }?>
