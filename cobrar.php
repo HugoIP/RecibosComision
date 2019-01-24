@@ -25,7 +25,7 @@ if(isset($_POST["btnCobrar"])){
 
      $con->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `
 platform`, `provider`, `dateCobro`) VALUES ('$pay','$serviceNum','$barCode','$atm','$location','$provider','$platform','$dateIntro')");
-    header("Location: cobrar.php?option=okoooo");
+    header("Location: cobrar.php?option=ok ".$row_cnt);
     
   }
 }
