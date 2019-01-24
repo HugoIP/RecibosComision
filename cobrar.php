@@ -157,8 +157,7 @@ if($_GET["option"]=="existPay"){?>
 <?php
 if($_GET["option"]=="ok"){?>
 <div class="alert alert-success" role="alert">
-  <strong>Error!</strong> El pago ya habia sido aplicado con anterioridad
-</div>
+  <strong>Pago realizado correctamente!</strong>
 <?php }?>
 <div class="row">
   <div class="col-10 col-md-6">
