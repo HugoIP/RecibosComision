@@ -16,17 +16,17 @@ if(isset($_POST["btnCobrar"])){
   $platform=$_POST['platform'];
   $result = $con->query("SELECT * FROM Cobros WHERE `barCode`='$barCode'");
   $row_cnt = $result->num_rows;
-  $result->close();
+  $con->close();
   if($row_cnt>0){
 
     header("Location: cobrar.php?option=existPay");
   }
   else
   {
-     $mysqliq = connect();
-     $mysqliq->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `
+     $cone = connect();
+     $result=$cone->query("INSERT INTO `Cobros`(`pay`,`serviceNum`, `barCode`, `atm`, `location`, `
 platform`, `provider`, `dateCobro`) VALUES ('$pay','$serviceNum','$barCode','$atm','$location','$provider','$platform','$dateIntro')");
-     $mysqliq->close();
+     $cone->close();
     header("Location: cobrar.php?option=ok");
     
   }
