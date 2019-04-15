@@ -178,7 +178,7 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <?php }?>
 <tr>
   <td > Total  </td>
-  <td > <?php $contador ?> </td>
+  <td > <?php echo $contador ?> </td>
   <td ></td>
   <td ></td>
   <td ></td>
