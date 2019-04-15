@@ -151,9 +151,7 @@ if(isset($_GET["option"])){?>
             <th>Codigo de barras</th>
             <th>Servicio</th>            
             <th>Monto</th>
-            <th>Vence</th>
-            <th>Grupo</th>
-            <th>Entregado</th>
+            <th>Fecha pago</th>
           </tr>
         </thead>
         <tbody class="BusquedaRapida">
@@ -174,11 +172,18 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <td id="BARC"><?php echo $misdatos["barCode"]; ?></td>
   <td id="SNUM"><?php echo $misdatos["serviceNum"]; ?></td>
   <td id="SPAY"><?php echo $misdatos["pay"]; ?></td>
-  <td id="LIMI"><?php echo $misdatos["limitPay"]; ?></td>
-  <td id="ORDE"><?php echo $misdatos["orderGrup"]; ?></td>
-  <td id="STAT"><?php echo ($misdatos["texStatus"]."  ".$misdatos["dateDeliver"]); ?></td>
-  </tr>    
-<?php }?>          
+  <td id="LIMI"><?php echo $misdatos["dateCobro"]; ?></td>
+</tr> 
+<tr>   
+<?php }?>
+<tr>
+  <td > Total  </td>
+  <td > <?php $contador ?> </td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+
+</tr>            
 </tbody>
       </table>		
 <!-- Fin Contenido --> 
