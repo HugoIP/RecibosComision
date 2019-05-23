@@ -177,7 +177,7 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 </tr> 
 <tr>   
 <?php
-  $totalMonto+=((float)$misdatos["pay"])-6.5);
+  $totalMonto+=(((float)$misdatos["pay"])-6.5);
  }?>
 <tr>
   <td > Total  </td>
