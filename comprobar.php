@@ -165,6 +165,7 @@ if(isset($_GET["fecha"])){
 $consulta = "select * from Cobros where DATE(`dateCobro`)=$strDate";
 $resultado = mysqli_query($con , $consulta);
 $contador=0;
+$totalMonto=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
 <tr>
@@ -175,13 +176,16 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <td id="LIMI"><?php echo $misdatos["dateCobro"]; ?></td>
 </tr> 
 <tr>   
-<?php }?>
+<?php
+  $totalMonto+=((float)$misdatos["pay"])-6.5);
+ }?>
 <tr>
   <td > Total  </td>
-  <td > <?php echo $contador ?> </td>
-  <td ></td>
-  <td ></td>
-  <td ></td>
+  
+  <td ><?php echo $contador ?></td>
+  <td ><?php echo $totalMonto ?></td>
+  <td ><?php echo $contador*6.5 ?></td>
+  <td ><?php echo $totalMonto+($contador*6.5) ?> </td>
 
 </tr>            
 </tbody>
