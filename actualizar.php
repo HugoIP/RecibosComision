@@ -61,6 +61,7 @@ $(document).ready(function () {
    (function($) {
        $('#FiltrarContenido').keyup(function () {
         contentString= String($(this).val());
+        updateData();
         if(contentString.length==30)
         {
             getBarCode = contentString;
