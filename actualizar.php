@@ -162,7 +162,7 @@ $(document).ready(function () {
    echo ("<div>Ordinal: ".$ordinal."</div>");
   
   */
-  mysqli_close($con);
+  //mysqli_close($con);
 
 if(isset($_GET["option"])){?>
  <div class="alert alert-success" role="alert">
