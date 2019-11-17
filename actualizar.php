@@ -41,7 +41,7 @@ $(document).ready(function () {
         success: function( msg )
         {
             //location.reload();
-            header("Location: actualizar.php?option=ok");
+            header("Location: actualizar.php?option=ok"+"&grupo"+lastGroup+"&ordinal"+ordinal);
         }
       });
   }
@@ -53,8 +53,8 @@ $(document).ready(function () {
       orderG = $(".BusquedaRapida tr #ORDE input").val();
       texSta = $(".BusquedaRapida tr #STAT input").val();
 
-      lastGroup=$(".BusquedaRapida tr #ordinal input").val();
-      ordinal=$(".BusquedaRapida tr #lastGroup input").val();
+      lastGroup=$("#paquete input").val();
+      ordinal=$(" #ordinal input").val();
 
   }
    (function($) {
@@ -137,10 +137,29 @@ $(document).ready(function () {
 <div class="container">
  <h1 class="mt-5">Busqueda</h1>
  <hr>
+
+
 <?php
   include "db.php";
-  $grupo=0;
-  $ordinal=0;
+  
+  $ordinal = intval($_GET["ordinal"]);
+  $grupo = intval($_GET["grupo"]);
+  if($ordinal==0)
+  {
+      $grupo=1;
+     $ordinal=1;
+ }
+  if($ordinal>20)
+  {
+    $grupo=$grupo+1;
+    $ordinal=1;
+  }
+?>
+<label for="paquete">Paquete</label>
+<input type="number" id="paquete"><?php echo $grupo; ?></div>
+<label for="ordinal">Orden</label>
+<input type="number" id="ordinal"><?php echo $ordinal; ?></div>
+<?php
  /* $con = connect();
   $consulta = "SELECT * FROM `Ciclos` WHERE `idCiclo`=1";
   $resultado = mysqli_query($con , $consulta);
