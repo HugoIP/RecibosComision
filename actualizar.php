@@ -150,11 +150,6 @@ $(document).ready(function () {
       $grupo=1;
      $ordinal=1;
  }
-  if($ordinal>20)
-  {
-    $grupo=$grupo+1;
-    $ordinal=1;
-  }
 ?>
 <?php
 
@@ -163,6 +158,11 @@ if(isset($_GET["option"])){?>
  <div class="alert alert-success" role="alert">
 <?php
   $ordinal=$ordinal+1;
+  if($ordinal>20)
+  {
+    $grupo=$grupo+1;
+    $ordinal=1;
+  }
 
 ?>
 
