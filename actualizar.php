@@ -155,49 +155,19 @@ $(document).ready(function () {
     $ordinal=1;
   }
 ?>
-<label for="paquete">Paquete</label>
-<input type="number" id="paquete" value=<?php echo $grupo; ?>>
-<label for="ordinal">Orden</label>
-<input type="number" id="ordinal" value=<?php echo $ordinal; ?>>
 <?php
- /* $con = connect();
-  $consulta = "SELECT * FROM `Ciclos` WHERE `idCiclo`=1";
-  $resultado = mysqli_query($con , $consulta);
-  $contador=0;
-  */
-  /*
-    while($misdatos = mysqli_fetch_assoc($resultado))
-    { 
-      $contador++;
-      //$grupo = $misdatos["groupOrder"];
-      //$ordinal = $misdatos["ordinal"];
 
-     }
-     */
-   //echo($contador):
-  /* 
-   echo ("<div>Grupo: ".$grupo."</div>");
-   echo ("<div>Ordinal: ".$ordinal."</div>");
-  
-  */
-  //mysqli_close($con);
 
 if(isset($_GET["option"])){?>
  <div class="alert alert-success" role="alert">
 <?php
+  $ordinal=$ordinal+1;
 
-  /*$con = connect();
-  if($ordinal>20)
-  {
-    $grupo=$grupo+1;
-    $ordinal=1;
-  }
-  $consulta = "UPDATE Ciclos  SET groupOrder=$grupo,ordinal=$ordinal  WHERE idCiclo=1";
-  $resultado = mysqli_query($con , $consulta);
-  mysqli_close($con);
-  */
 ?>
-
+<label for="paquete">Paquete</label>
+<input type="number" id="paquete" value=<?php echo $grupo; ?>>
+<label for="ordinal">Orden</label>
+<input type="number" id="ordinal" value=<?php echo $ordinal; ?>>
   <strong>Hecho!</strong> El registro ha sido guardado con exito.
 </div>
 <?php }?>
