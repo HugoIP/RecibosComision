@@ -36,7 +36,7 @@ $(document).ready(function () {
         success: function( msg )
         {
         	console.log(msg);
-            location.reload();
+            //location.reload();
         }
       });
   }
