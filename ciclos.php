@@ -51,6 +51,13 @@ $(document).ready(function () {
 	  getOrdinal= $("#ordinal").val();
 	  getStatus= $("#status").val();
   }
+  (function($) {
+        $( "#Enviar" ).click(function( ) {
+            ActualizarRecibo();
+            event.preventDefault();
+        });                       
+  }(jQuery));
+
 
 });
 </script> 
