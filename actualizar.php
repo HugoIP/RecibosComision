@@ -145,18 +145,17 @@ $(document).ready(function () {
   $consulta = "SELECT * FROM `Ciclos` WHERE `idCiclo`=1";
   $resultado = mysqli_query($con , $consulta);
   $contador=0;
-  
   echo($contador);
-  if(! $resultado  ) {
-      die('Could not get data: ' . mysql_error());
-   }else{
-    while($misdatos = mysqli_fetch_assoc($resultado)){ 
+  $misdatos = mysqli_fetch_assoc($resultado);
+  echo($misdatos["groupOrder"]);
+  echo($contador);
+    while($misdatos = mysqli_fetch_assoc($resultado))
+    { 
       $contador++;
       //$grupo = $misdatos["groupOrder"];
       //$ordinal = $misdatos["ordinal"];
 
      }
-   }
    echo($contador):
   /* 
    echo ("<div>Grupo: ".$grupo."</div>");
