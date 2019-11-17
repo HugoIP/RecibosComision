@@ -147,6 +147,9 @@ $(document).ready(function () {
   $contador=0;
   
   echo($contador);
+  if(! $resultado  ) {
+      die('Could not get data: ' . mysql_error());
+   }
   while($misdatos = mysqli_fetch_assoc($resultado)){ 
     $contador++;
     //$grupo = $misdatos["groupOrder"];
@@ -157,9 +160,9 @@ $(document).ready(function () {
   /* 
    echo ("<div>Grupo: ".$grupo."</div>");
    echo ("<div>Ordinal: ".$ordinal."</div>");
-  mysqli_close($con);
+  
   */
-
+  mysqli_close($con);
 
 if(isset($_GET["option"])){?>
  <div class="alert alert-success" role="alert">
