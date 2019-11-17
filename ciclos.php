@@ -35,6 +35,7 @@ $(document).ready(function () {
       data:  ser_data,
         success: function( msg )
         {
+        	console.log(msg);
             location.reload();
         }
       });
