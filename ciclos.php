@@ -3,6 +3,12 @@
 <head>
 	<title>Incial cilclo</title>
 </head>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<!-- Bootstrap core CSS -->
+<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="assets/css/sticky-footer-navbar.css" rel="stylesheet">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
 <script type="text/javascript">
 $(document).ready(function () {
   var getCiclo;
@@ -77,6 +83,14 @@ $con = connect();
 	<label for="status">Estatus </label>
 	<input type="text" id="status" name="status">
 	<input type="submit" name="Enviar" id="Enviar" value="Enviar">
+
+	 <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
 </div>
 </body>
 </html>
