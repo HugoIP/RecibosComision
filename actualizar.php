@@ -200,7 +200,6 @@ if(isset($_GET["option"])){?>
         </thead>
         <tbody class="BusquedaRapida">
 <?php
-include "db.php";
 $con = connect();
 $consulta = "SELECT * FROM Servicios";
 $resultado = mysqli_query($con , $consulta);
