@@ -141,12 +141,11 @@ $(document).ready(function () {
   include "db.php";
   $grupo=0;
   $ordinal=0;
-  $con = connect();
+ /* $con = connect();
   $consulta = "SELECT * FROM `Ciclos` WHERE `idCiclo`=1";
   $resultado = mysqli_query($con , $consulta);
   $contador=0;
-  echo($contador);
-  echo($contador);
+  */
   /*
     while($misdatos = mysqli_fetch_assoc($resultado))
     { 
@@ -156,7 +155,7 @@ $(document).ready(function () {
 
      }
      */
-   echo($contador):
+   //echo($contador):
   /* 
    echo ("<div>Grupo: ".$grupo."</div>");
    echo ("<div>Ordinal: ".$ordinal."</div>");
