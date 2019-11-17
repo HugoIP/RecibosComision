@@ -26,7 +26,7 @@ $msg=$msg." :p: ".$poblacion;
   //}
 
  
-
+$msg=$msg." :st: ";
   $con = connect();
    $result = mysqli_query($con,"SELECT * FROM Ciclos WHERE ciclo=$ciclo");
 
