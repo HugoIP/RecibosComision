@@ -144,8 +144,9 @@ $(document).ready(function () {
   $consulta = "SELECT * FROM Ciclos WHERE idCiclo=1";
   $resultado = mysqli_query($con , $consulta);
   $contador=0;
-  /*
-  echo($contador):
+  
+  echo($contador);
+
   while($misdatos = mysqli_fetch_assoc($resultado)){ 
     $contador++;
     $grupo = $misdatos["groupOrder"];
@@ -153,8 +154,8 @@ $(document).ready(function () {
 
    }
    echo($contador):
-   echo ("<div>Grupo: ".$grupo."</div>"):
-   echo ("<div>Ordinal: ".$ordinal."</div>"):
+   echo ("<div>Grupo: ".$grupo."</div>");
+   echo ("<div>Ordinal: ".$ordinal."</div>");
   mysqli_close($con);
   */
 
