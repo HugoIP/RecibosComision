@@ -139,20 +139,22 @@ $(document).ready(function () {
  <hr>
 <?php
   include "db.php";
+  $grupo=0;
   $con = connect();
   $consulta = "SELECT * FROM Ciclos WHERE idCiclo=1";
   $resultado = mysqli_query($con , $consulta);
   $contador=0;
-
+  echo($contador):
   while($misdatos = mysqli_fetch_assoc($resultado)){ 
     $contador++;
     $grupo = $misdatos["groupOrder"];
     $ordinal = $misdatos["ordinal"];
 
    }
+   echo($contador):
    echo ("<div>Grupo: ".$grupo."</div>"):
    echo ("<div>Ordinal: ".$ordinal."</div>"):
-  //mysqli_close($con);
+  mysqli_close($con);
   
 
 
