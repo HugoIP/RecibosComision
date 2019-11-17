@@ -152,7 +152,7 @@ $(document).ready(function () {
    }
    echo ("<div>Grupo: ".$grupo."</div>"):
    echo ("<div>Ordinal: ".$ordinal."</div>"):
-  mysqli_close($con);
+  //mysqli_close($con);
 
 
 
@@ -160,7 +160,7 @@ if(isset($_GET["option"])){?>
  <div class="alert alert-success" role="alert">
 <?php
 
-  $con = connect();
+  /*$con = connect();
   if($ordinal>20)
   {
     $grupo=$grupo+1;
@@ -169,6 +169,7 @@ if(isset($_GET["option"])){?>
   $consulta = "UPDATE Ciclos  SET grupo=$grupo,ordinal=$ordinal  WHERE idCiclo=1";
   $resultado = mysqli_query($con , $consulta);
   mysqli_close($con);
+  */
 ?>
 
   <strong>Hecho!</strong> El registro ha sido guardado con exito.
