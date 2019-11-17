@@ -140,8 +140,9 @@ $(document).ready(function () {
 <?php
   include "db.php";
   $grupo=0;
+  $ordinal=0;
   $con = connect();
-  $consulta = "SELECT * FROM Ciclos WHERE idCiclo=1";
+  $consulta = "SELECT * FROM `Ciclos` WHERE `idCiclo`=1";
   $resultado = mysqli_query($con , $consulta);
   $contador=0;
   
