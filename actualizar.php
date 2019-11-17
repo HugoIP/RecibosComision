@@ -147,7 +147,6 @@ $(document).ready(function () {
   $grupo = intval($_GET["grupo"]);
   if($ordinal==0)
   {
-      $grupo=1;
      $ordinal=1;
  }
 ?>
