@@ -68,7 +68,7 @@ $(document).ready(function () {
             getPay = parseInt(contentString.substring(20,29));
             getDate = "20"+contentString.substring(14,16)+"-"+contentString.substring(16,18)+"-"+contentString.substring(18,20);
             ValorBusqueda = new RegExp(getServiceNum, 'i');
-            orderG=1;
+            orderG=lastGroup;
             texSta="-No-";
 
             $('.BusquedaRapida tr').hide();
