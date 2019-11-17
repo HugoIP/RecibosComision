@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     var ser_data = jQuery.param( params );
     console.log(ser_data);
-    /*$.ajax({
+    $.ajax({
       type: "GET",
       url: "updateCiclos.php",
       data:  ser_data,
@@ -37,7 +37,7 @@ $(document).ready(function () {
         {
             location.reload();
         }
-      });*/
+      });
   }
   function updateData()
   {
