@@ -146,7 +146,7 @@ $(document).ready(function () {
 
   while($misdatos = mysqli_fetch_assoc($resultado)){ 
     $contador++;
-    $grupo = $misdatos["grupo"];
+    $grupo = $misdatos["groupOrder"];
     $ordinal = $misdatos["ordinal"];
 
    }
@@ -166,7 +166,7 @@ if(isset($_GET["option"])){?>
     $grupo=$grupo+1;
     $ordinal=1;
   }
-  $consulta = "UPDATE Ciclos  SET grupo=$grupo,ordinal=$ordinal  WHERE idCiclo=1";
+  $consulta = "UPDATE Ciclos  SET groupOrder=$grupo,ordinal=$ordinal  WHERE idCiclo=1";
   $resultado = mysqli_query($con , $consulta);
   mysqli_close($con);
   */
