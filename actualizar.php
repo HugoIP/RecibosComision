@@ -147,15 +147,14 @@ $(document).ready(function () {
   $contador=0;
   
   echo($contador);
-/*
   while($misdatos = mysqli_fetch_assoc($resultado)){ 
     $contador++;
-    $grupo = $misdatos["groupOrder"];
-    $ordinal = $misdatos["ordinal"];
+    //$grupo = $misdatos["groupOrder"];
+    //$ordinal = $misdatos["ordinal"];
 
    }
    echo($contador):
-   
+  /* 
    echo ("<div>Grupo: ".$grupo."</div>");
    echo ("<div>Ordinal: ".$ordinal."</div>");
   mysqli_close($con);
