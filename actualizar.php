@@ -139,7 +139,7 @@ $(document).ready(function () {
  <hr>
 <?php
   include "db.php";
-  $con = connect();
+  /*$con = connect();
   $consulta = "SELECT * FROM Ciclos WHERE ciclo=1";
   $resultado = mysqli_query($con , $consulta);
   $contador=0;
@@ -153,7 +153,7 @@ $(document).ready(function () {
    echo ("<div>Grupo: ".$grupo."</div>"):
    echo ("<div>Ordinal: ".$ordinal."</div>"):
   //mysqli_close($con);
-
+  */
 
 
 if(isset($_GET["option"])){?>
