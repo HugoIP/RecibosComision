@@ -155,10 +155,11 @@ $(document).ready(function () {
 
    }
    echo($contador):
+   /*
    echo ("<div>Grupo: ".$grupo."</div>");
    echo ("<div>Ordinal: ".$ordinal."</div>");
   mysqli_close($con);
-  
+  */
 
 
 if(isset($_GET["option"])){?>
