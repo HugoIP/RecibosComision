@@ -54,8 +54,8 @@ $(document).ready(function () {
       orderG = $(".BusquedaRapida tr #ORDE input").val();
       texSta = $(".BusquedaRapida tr #STAT input").val();
 
-      lastGroup=$("#paquete input").val();
-      ordinal=$(" #ordinal input").val();
+      lastGroup=$("#paquete").val();
+      ordinal=$(" #ordinal").val();
 
   }
    (function($) {
