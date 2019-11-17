@@ -144,6 +144,7 @@ $(document).ready(function () {
   $consulta = "SELECT * FROM Ciclos WHERE idCiclo=1";
   $resultado = mysqli_query($con , $consulta);
   $contador=0;
+  /*
   echo($contador):
   while($misdatos = mysqli_fetch_assoc($resultado)){ 
     $contador++;
@@ -155,7 +156,7 @@ $(document).ready(function () {
    echo ("<div>Grupo: ".$grupo."</div>"):
    echo ("<div>Ordinal: ".$ordinal."</div>"):
   mysqli_close($con);
-  
+  */
 
 
 if(isset($_GET["option"])){?>
