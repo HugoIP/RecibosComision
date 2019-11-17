@@ -41,7 +41,8 @@ $(document).ready(function () {
         success: function( msg )
         {
             //location.reload();
-            header("Location: actualizar.php?option=ok"+"&grupo"+lastGroup+"&ordinal"+ordinal);
+            strUrl="actualizar.php?option=ok"+"&grupo="+lastGroup+"&ordinal="+ordinal;
+            location.replace(strUrl);
         }
       });
   }
