@@ -4,8 +4,8 @@ ini_set("display_errors", 1);
 include "db.php";
 if(isset($_GET['ciclo'])){
 	$con = connect();
-  if($_GET['status']=="open")
-  {
+  //if($_GET['status']=="open")
+  //{
     //var params = {ciclo:getCiclo, poblacion:getPoblacion, importe:getImporte,total:getTotal, operador:getOperador, paq:getPaq, paq:getPaq, grupo:getGrupo, ordinal:getOrdinal, status:getStatus};
     $dateInit= date("Y-m-d H:i:s");
     $ciclo=$_GET['ciclo'];
@@ -22,7 +22,7 @@ if(isset($_GET['ciclo'])){
     //$consulta="UPDATE Servicios SET barCode='$barCode', limitPay=$limitPay, dateIntro=$dateIntro, texStatus=$texStatus, orderGrup=$orderGrup WHERE serviceNum=$serviceNum";
     mysqli_query($con,$consulta);
     mysqli_close($con);
-  }
+  //}
 
  
   mysqli_close($con);
