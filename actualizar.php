@@ -24,6 +24,9 @@ $(document).ready(function () {
   var orderG;
   var texSta;
 
+  var lastGroup;
+  var ordinal;
+
 
   function ActualizarRecibo()
   { 
@@ -37,7 +40,8 @@ $(document).ready(function () {
       data:  ser_data,
         success: function( msg )
         {
-            location.reload();
+            //location.reload();
+            header("Location: actualizar.php?option=ok");
         }
       });
   }
@@ -48,6 +52,10 @@ $(document).ready(function () {
       getDate = $(".BusquedaRapida tr #LIMI input").val();
       orderG = $(".BusquedaRapida tr #ORDE input").val();
       texSta = $(".BusquedaRapida tr #STAT input").val();
+
+      lastGroup=$(".BusquedaRapida tr #ordinal input").val();
+      ordinal=$(".BusquedaRapida tr #lastGroup input").val();
+
   }
    (function($) {
        $('#FiltrarContenido').keyup(function () {
@@ -130,8 +138,39 @@ $(document).ready(function () {
  <h1 class="mt-5">Busqueda</h1>
  <hr>
 <?php
+  include "db.php";
+  $con = connect();
+  $consulta = "SELECT * FROM Ciclos WHERE ciclo=1";
+  $resultado = mysqli_query($con , $consulta);
+  $contador=0;
+
+  while($misdatos = mysqli_fetch_assoc($resultado)){ 
+    $contador++;
+    $grupo = $misdatos["grupo"];
+    $ordinal = $misdatos["ordinal"];
+
+   }
+   echo ("<div>Grupo: ".$grupo."</div>"):
+   echo ("<div>Ordinal: ".$ordinal."</div>"):
+  mysqli_close($con);
+
+
+
 if(isset($_GET["option"])){?>
  <div class="alert alert-success" role="alert">
+<?php
+
+  $con = connect();
+  if($ordinal>20)
+  {
+    $grupo=$grupo+1;
+    $ordinal=1;
+  }
+  $consulta = "UPDATE Ciclos  SET grupo=$grupo,ordinal=$ordinal  WHERE idCiclo=1";
+  $resultado = mysqli_query($con , $consulta);
+  mysqli_close($con);
+?>
+
   <strong>Hecho!</strong> El registro ha sido guardado con exito.
 </div>
 <?php }?>
@@ -177,7 +216,9 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <td id="ORDE"><?php echo $misdatos["orderGrup"]; ?></td>
   <td id="STAT"><?php echo $misdatos["texStatus"]; ?></td>
   </tr>    
-<?php }?>          
+<?php }
+mysqli_close($con);
+?>          
 </tbody>
       </table>		
 <!-- Fin Contenido --> 
