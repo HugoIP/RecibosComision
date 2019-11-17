@@ -25,7 +25,7 @@ $(document).ready(function () {
   function ActualizarRecibo()
   { 
     updateData();
-    var params = {ciclo:getCiclo, poblacion:getPoblacion, importe:getImporte,total:getTotal, operador:getOperador, paq:getPaq, paq:getPaq, grupo:getGrupo, ordinal:getOrdinal, status:getSatatus}; // etc.
+    var params = {ciclo:getCiclo, poblacion:getPoblacion, importe:getImporte,total:getTotal, operador:getOperador, paq:getPaq, paq:getPaq, grupo:getGrupo, ordinal:getOrdinal, status:getStatus}; // etc.
 
     var ser_data = jQuery.param( params );
     console.log(ser_data);
@@ -83,8 +83,6 @@ $con = connect();
 	<input type="number" id="paq" name="paq">
 	<label for="grupo">Grupo </label>
 	<input type="number" id="grupo" name="grupo">
-	<label for="ordinal">Orden </label>
-	<input type="number" id="ordinal" name="ordinal">
 	<label for="ordinal">Orden </label>
 	<input type="number" id="ordinal" name="ordinal">
 	<label for="status">Estatus </label>
