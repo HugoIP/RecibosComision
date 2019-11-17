@@ -164,13 +164,14 @@ if(isset($_GET["option"])){?>
   $ordinal=$ordinal+1;
 
 ?>
+
+  <strong>Hecho!</strong> El registro ha sido guardado con exito.
+</div>
+<?php }?>
 <label for="paquete">Paquete</label>
 <input type="number" id="paquete" value=<?php echo $grupo; ?>>
 <label for="ordinal">Orden</label>
 <input type="number" id="ordinal" value=<?php echo $ordinal; ?>>
-  <strong>Hecho!</strong> El registro ha sido guardado con exito.
-</div>
-<?php }?>
 <div class="row">
   <div class="col-12 col-md-12">
 
