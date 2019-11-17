@@ -156,9 +156,9 @@ $(document).ready(function () {
   }
 ?>
 <label for="paquete">Paquete</label>
-<input type="number" id="paquete"><?php echo $grupo; ?></div>
+<input type="number" id="paquete" value=<?php echo $grupo; ?>>
 <label for="ordinal">Orden</label>
-<input type="number" id="ordinal"><?php echo $ordinal; ?></div>
+<input type="number" id="ordinal" value=<?php echo $ordinal; ?>>
 <?php
  /* $con = connect();
   $consulta = "SELECT * FROM `Ciclos` WHERE `idCiclo`=1";
