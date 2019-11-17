@@ -157,7 +157,7 @@ $(document).ready(function () {
    echo ("<div>Grupo: ".$grupo."</div>");
    echo ("<div>Ordinal: ".$ordinal."</div>");
   mysqli_close($con);
-  */
+  
 
 
 if(isset($_GET["option"])){?>
