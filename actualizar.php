@@ -146,8 +146,6 @@ $(document).ready(function () {
   $resultado = mysqli_query($con , $consulta);
   $contador=0;
   echo($contador);
-  $misdatos = mysqli_fetch_assoc($resultado);
-  echo($misdatos["groupOrder"]);
   echo($contador);
   /*
     while($misdatos = mysqli_fetch_assoc($resultado))
