@@ -25,13 +25,13 @@ if(isset($_GET['ciclo'])){
   //}
 
  
-  mysqli_close($con);
+
   $con = connect();
    $result = mysqli_query($con,"SELECT * FROM Ciclos WHERE ciclo=$ciclo");
-
+$msg="result";
  while($row = mysqli_fetch_array($result))
  {
-    $msg =$msg."    ".$row['barCode'];
+    $msg =$msg."    ".$row['poblacion'];
   }
 }
 mysqli_close($con);
