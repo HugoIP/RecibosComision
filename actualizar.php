@@ -149,12 +149,13 @@ $(document).ready(function () {
   echo($contador);
   if(! $resultado  ) {
       die('Could not get data: ' . mysql_error());
-   }
-  while($misdatos = mysqli_fetch_assoc($resultado)){ 
-    $contador++;
-    //$grupo = $misdatos["groupOrder"];
-    //$ordinal = $misdatos["ordinal"];
+   }else{
+    while($misdatos = mysqli_fetch_assoc($resultado)){ 
+      $contador++;
+      //$grupo = $misdatos["groupOrder"];
+      //$ordinal = $misdatos["ordinal"];
 
+     }
    }
    echo($contador):
   /* 
