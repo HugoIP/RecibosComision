@@ -11,8 +11,9 @@ if(isset($_POST["btnguardar"])){
   $orderGrup=$_POST['orderGrup'];
   $dateIntro=date("Y-m-d");
   $texStatus="-No-";
+  $geoLoc=$_POST['serviceName'];
 	
-	$con->query("INSERT INTO Servicios (serviceName, barCode, serviceNum, pay, limitPay, dateIntro,texStatus, orderGrup) VALUES ('$serviceName', '$barCode', '$serviceNum','$pay','$limitPay','$dateIntro','$texStatus', '$orderGrup')");
+	$con->query("INSERT INTO Servicios (serviceName, barCode, serviceNum, pay, limitPay, dateIntro,texStatus, orderGrup,geoLoc) VALUES ('$serviceName', '$barCode', '$serviceNum','$pay','$limitPay','$dateIntro','$texStatus', '$orderGrup','$geoLoc')");
 	header("Location: index.php?option=ok");
 }
 
@@ -43,6 +44,7 @@ $(document).ready(function () {
   var orderG;
   var texSta;
   var getName;
+  var getGeo;
 
    (function($) {
        $('#getContenido').keyup(function () {
@@ -56,12 +58,13 @@ $(document).ready(function () {
             getDate = "20"+contentString.substring(14,16)+"-"+contentString.substring(16,18)+"-"+contentString.substring(18,20);
             orderG=1;
             texSta="-No-";
-           
+            getGeo=2;
 
             $("#SNUM" ).val(getServiceNum);
             $("#ORDE" ).val(orderG);
             $("#SPAY" ).val(getPay);
             $("#LIMI" ).val(getDate);
+            $("#GEOF" ).val(getGeo);
         }
        })     
       }(jQuery));
@@ -135,6 +138,10 @@ $(document).ready(function () {
        <div class="form-group">
     <label for="pay">Grupo:</label>
     <input id="ORDE" class="form-control" type="text" name="orderGrup"  placeholder="Cantidad a pagar" value="1">
+     </div>
+     <div class="form-group">
+    <label for="getGeo">Ubicacion:</label>
+    <input id="GEOF" class="form-control" type="text" name="getGeo"  placeholder="Cantidad a pagar" value="2">
      </div>
        
        
