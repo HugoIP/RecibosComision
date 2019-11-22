@@ -154,6 +154,7 @@ if(isset($_GET["option"])){?>
             <th>Vence</th>
             <th>Grupo</th>
             <th>Entregado</th>
+            <th>Punto de Entrega</th>
           </tr>
         </thead>
         <tbody class="BusquedaRapida">
@@ -165,6 +166,10 @@ $resultado = mysqli_query($con , $consulta);
 $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
+  <?php  
+  if(intval($misdatos["geoLoc"])==0)
+    {
+  ?>
 <tr>
   <td id="NAME"><?php echo $misdatos["serviceName"]; ?></td>
   <td id="BARC"><?php echo $misdatos["barCode"]; ?></td>
@@ -173,8 +178,14 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <td id="LIMI"><?php echo $misdatos["limitPay"]; ?></td>
   <td id="ORDE"><?php echo $misdatos["orderGrup"]; ?></td>
   <td id="STAT"><?php echo ($misdatos["texStatus"]."  ".$misdatos["dateDeliver"]); ?></td>
+  <td><?php 
+    if(intval($misdatos["geoLoc"])==0)
+    {
+      echo "Analco";
+    }
+     ?></td>
   </tr>    
-<?php }?>          
+<?php }}?>          
 </tbody>
       </table>		
 <!-- Fin Contenido --> 

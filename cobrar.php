@@ -82,7 +82,7 @@ $(document).ready(function () {
 
             if(atm=="")
             {
-              atm="Monica";
+              atm="Hugo";
             }
             if(comision=="")
             {
@@ -98,7 +98,7 @@ $(document).ready(function () {
             }
             if(location=="")
             {
-              location="vNova Internet SCV";
+              location="wNova Internet BGA";
             }
 
             $("#SNUM" ).val(getServiceNum);
@@ -192,11 +192,11 @@ if($_GET["option"]=="ok"){?>
      </div>
      <div class="row">
     <label for="platform">Plataforma de pago:</label>
-    <input id="PLAT" class="form-control" type="text" name="platform"  placeholder="Yastas /  vNova Internet" value="">
+    <input id="PLAT" class="form-control" type="text" name="platform"  placeholder="Yastas" value="">
      </div>
        <div class="row">
     <label for="atm">Cajero:</label>
-    <input id="ATM" type="text" class="form-control" name="atm" placeholder="Monica" value="">
+    <input id="ATM" type="text" class="form-control" name="atm" placeholder="Oscar" value="">
      </div>
        <div class="row">
     <label for="provider">Tipo de cobro:</label>
@@ -204,7 +204,7 @@ if($_GET["option"]=="ok"){?>
      </div>
     <div class="row">
     <label for="location">Lugar:</label>
-    <input id="LOCA" class="form-control" type="text" name="location"  placeholder="vNova Internet SCV" value="">
+    <input id="LOCA" class="form-control" type="text" name="location"  placeholder="wNova Internet BGA" value="">
      </div>
        
        
