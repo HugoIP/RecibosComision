@@ -7,15 +7,15 @@ if ( ! empty( $_POST ) ) {
     	$usernam=$_POST['username'];
         // Getting submitted user data from database
         $con = new mysqli("localhost","ihuancom_hugoip","MONICA","ihuancom_RecibosComision");
-        $stmt = $con->prepare("SELECT * FROM Usuarios WHERE username = $usernam");
+        $stmt = $con->prepare("SELECT * FROM Usuarios WHERE txt_userName = $usernam");
         $stmt->bind_param('s', $_POST['username']);
         $stmt->execute();
         $result = $stmt->get_result();
     	$user = $result->fetch_object();
     		
     	// Verify user password and set $_SESSION
-    	if ( password_verify( $_POST['password'], $user->password ) ) {
-    		$_SESSION['user_id'] = $user->ID;
+    	if ( password_verify( $_POST['password'], $user->txt_pass ) ) {
+    		$_SESSION['user_id'] = $user->txt_userName;
     	}
     }
 }
@@ -27,7 +27,7 @@ if ( ! empty( $_POST ) ) {
 	<title>Identificacion</title>
 </head>
 <body>
-    
+
 <h1>Recibos CFE</h1>
 
 <?php
