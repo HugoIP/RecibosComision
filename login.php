@@ -1,8 +1,8 @@
 <?php
 // Always start this first
 session_start();
-echo($_POST['username');
-echo($_POST['password'] );
+echo($_POST['username']);
+echo($_POST['password']);
 if ( ! empty( $_POST ) ) {
     if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
     	$usernam=$_POST['username'];
