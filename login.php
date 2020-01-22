@@ -16,6 +16,7 @@ if ( ! empty( $_POST ) ) {
     	// Verify user password and set $_SESSION
     	if ( password_verify( $_POST['password'], $user->txt_pass ) ) {
     		$_SESSION['user_id'] = $user->txt_userName;
+            echo ($user->txt_userName);
     	}
     }
 }
