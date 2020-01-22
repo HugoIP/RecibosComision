@@ -167,8 +167,8 @@ $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <?php  
-  if(intval($misdatos["geoLoc"])==0)
-    {
+  //if(intval($misdatos["geoLoc"])==0)
+    //{
   ?>
 <tr>
   <td id="NAME"><?php echo $misdatos["serviceName"]; ?></td>
@@ -183,9 +183,14 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
     {
       echo "Analco";
     }
+    else
+    {
+      echo "vNova";
+    } 
      ?></td>
   </tr>    
-<?php }}?>          
+<?php //}
+}?>          
 </tbody>
       </table>		
 <!-- Fin Contenido --> 
