@@ -7,7 +7,7 @@ if ( ! empty( $_POST ) ) {
     	$usernam=$_POST['username'];
         // Getting submitted user data from database
         $con = new mysqli("localhost","ihuancom_hugoip","MONICA","ihuancom_RecibosComision");
-        $stmt = $con->prepare("SELECT * FROM Usuarios WHERE txt_userName = $usernam");
+        $stmt = $con->prepare("SELECT * FROM Usuarios WHERE txt_userName = '$usernam'");
         $stmt->bind_param('s', $_POST['username']);
         $stmt->execute();
         $result = $stmt->get_result();
