@@ -4,8 +4,7 @@ session_start();
 if ( ! empty( $_POST ) ) {
     if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
     	$usernam=$_POST['username'];
-        echo($_POST['username']);
-echo($_POST['password']);
+
         // Getting submitted user data from database
         $con = new mysqli("localhost","ihuancom_hugoip","MONICA","ihuancom_RecibosComision");
         $stmt = $con->prepare("SELECT * FROM Usuarios WHERE txt_userName = '$usernam'");
@@ -13,9 +12,10 @@ echo($_POST['password']);
         $stmt->execute();
         $result = $stmt->get_result();
     	$user = $result->fetch_object();
-    		
+    	echo("US: "+$user->txt_userName);
+        echo("PA: "+$user->txt_pass);
     	// Verify user password and set $_SESSION
-    	if ( password_verify( $_POST['password'], $user->txt_pass ) ) {
+    	if ( $_POST['password']== ) {
     		$_SESSION['user_id'] = $user->txt_userName;
             echo ($user->txt_userName);
 
