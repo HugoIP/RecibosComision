@@ -5,15 +5,9 @@ if(isset( $_SESSION['user_id'] ))
 {
   $userName=$_SESSION['user_id'];
   $userlocation=$_SESSION['user_location'];
-  $userLocationName="";
-  switch ($userLocation) {
-    case 0:
+  $userLocationName="vNova (Jardin 4, Santa Catarina Villanueva, Quecholac)";
+  if ($userLocation==0) {
       $userLocationName="wNova (Guadalupe Victoria s/n, Barrio Guadalupe Analco, Gral. Felipe Angeles)";
-      break;
-    
-    default:
-      $userLocationName="vNova (Jardin 4, Santa Catarina Villanueva, Quecholac)";
-      break;
   }
 }
 ?>
