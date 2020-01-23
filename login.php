@@ -4,7 +4,7 @@ session_start();
 if ( ! empty( $_POST ) ) {
     if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
     	$usernam=$_POST['username'];
-
+        $tryCheck=0;
         // Getting submitted user data from database
         $con = new mysqli("localhost","ihuancom_hugoip","MONICA","ihuancom_RecibosComision");
         $stmt = $con->prepare("SELECT * FROM Usuarios WHERE txt_userName = '$usernam'");
@@ -19,7 +19,12 @@ if ( ! empty( $_POST ) ) {
             $now   = new DateTime;
             $moment=$now->format( 'd-m-Y H:i:s' );
             $_SESSION['user_date_init'] = $now;
+            $tryCheck=0;
     	}
+        else
+        {
+            $tryCheck=2;
+        }
     }
 }
 ?>
@@ -56,7 +61,18 @@ if ( ! empty( $_POST ) ) {
         echo ('<h1 class="h3 mb-3 font-weight-normal">Bienvenido/a  '.$_SESSION['user_id']."</h1>");
         echo ('<a href="logout.php">Salir</a> ');
           
-    } else {
+    } 
+    else 
+    {
+        if($tryCheck==2)
+        {
+            ?>
+            <div class="alert alert-danger" role="alert">
+ ! Datos incorrectos ¡
+</div>
+            <?php
+        }
+
     ?>
     
 
