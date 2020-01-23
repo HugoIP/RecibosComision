@@ -1,3 +1,12 @@
+<?php
+// Always start this first
+session_start();
+if(isset( $_SESSION['user_id'] ))
+{
+  $userName=$_SESSION['user_id'];
+  $userlocation=$_SESSION['user_location'];
+}
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -48,8 +57,26 @@ $(document).ready(function () {
                   
           </ul>
           <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
+            <?php
+
+
+            if(isset($userName)){
+              ?>
+              <div class="alert alert-success" role="alert">
+                <strong>Usuario </strong> $userName
+              </div>
+              <?php
+            }
+            else
+            {
+              ?>
+              <div class="alert alert-warning" role="alert">
+              <a href="login.php">Identificarse</a>
+              </div>
+              <?php
+            }
+
+            ?>
           </form>
         </div>
       </nav>
