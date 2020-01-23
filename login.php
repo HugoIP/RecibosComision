@@ -88,8 +88,7 @@ if ( ! empty( $_POST ) ) {
       </div>
       <div class="form-group">
       <select name="selectLocation" class="form-control">
-          <option value="999" selected>Ubicacion</option> 
-          <option value="1">vNova (Jardin 4, Santa Catarina Villanueva, Quecholac)</option>
+          <option value="1" selected>vNova (Jardin 4, Santa Catarina Villanueva, Quecholac)</option>
           <option value="0">wNova (Guadalupe Victoria s/n, Barrio Guadalupe Analco, Gral. Felipe Angeles)</option>
         </select>
       </div>
