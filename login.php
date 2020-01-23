@@ -12,13 +12,9 @@ if ( ! empty( $_POST ) ) {
         $stmt->execute();
         $result = $stmt->get_result();
     	$user = $result->fetch_object();
-    	echo("US: "+$user->txt_userName);
-        echo("PA: "+$user->txt_pass);
     	// Verify user password and set $_SESSION
     	if ( $_POST['password'] == $user->txt_pass ) {
     		$_SESSION['user_id'] = $user->txt_userName;
-            echo ($user->txt_userName);
-
     	}
     }
 }
@@ -41,8 +37,8 @@ if ( ! empty( $_POST ) ) {
 if ( isset( $_SESSION['user_id'] ) ) {
     // Grab user data from the database using the user_id
     // Let them access the "logged in only" pages
-	echo ("<h2>Bienvenido/a  "+$_SESSION['user_id']+"</h2>");
-	echo ('<a href="vnovainternet.ihuan.com.mx/RecibosComision/logout.php">Salir</a> ');
+	echo ("<p>Bienvenido/a  "+$_SESSION['user_id']+"</p>");
+	echo ('<a href="logout.php">Salir</a> ');
 	  
 } else {
     // Redirect them to the login page
