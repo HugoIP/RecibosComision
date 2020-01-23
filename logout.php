@@ -9,10 +9,13 @@ $userlocation=$_SESSION['user_location'];
 $past = new DateTime;
 $now = new DateTime;
 $past =$_SESSION['user_date_init'] ;
+if(isset($username))
+{
 $interval = $past->diff($now);
 $difTime= $interval->format("%H:%I:%S");
 $momentInit=$past->format( 'd-m-Y H:i:s' );
 $momentEnd=$now->format( 'd-m-Y H:i:s' );
+}
 
 
 session_destroy();
@@ -26,7 +29,7 @@ session_destroy();
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Inicio de Sesion</title>
+    <title>Cerrar de Sesion</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
     <!-- Custom styles for this template -->
