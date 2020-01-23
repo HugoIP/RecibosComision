@@ -44,7 +44,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
     <form action="" method="post">
 	    <input type="text" name="username" placeholder="Ingresa tu Identificador" required>
 	    <input type="password" name="password" placeholder="Clave personal" required>
-	    <input type="submit" value="Submit">');  
+	    <input type="submit" value="Ingresar">');  
 }
 ?>
 
