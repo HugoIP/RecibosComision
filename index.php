@@ -160,7 +160,6 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
       echo "Villanueva";
     }
      ?></td>
-    }
   </tr>
           
 <?php }}?>          
