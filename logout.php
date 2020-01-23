@@ -1,3 +1,12 @@
+<?php
+// Always start this first
+session_start();
+
+// Destroying the session clears the $_SESSION variable, thus "logging" the user
+// out. This also happens automatically when the browser is closed
+$username=$_SESSION['user_id'];
+session_destroy();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,13 +14,9 @@
 </head>
 <body>
 <?php
-// Always start this first
-session_start();
 
-// Destroying the session clears the $_SESSION variable, thus "logging" the user
-// out. This also happens automatically when the browser is closed
-echo ("<h2>"+$_SESSION['user_id']+" haz terminado tu sesion</h2>");
-session_destroy();
+echo ("<h2>"+$username+" haz terminado tu sesion</h2>");
+
 
 
 	echo ('<a href="login.php">Identificarse</a> ');
