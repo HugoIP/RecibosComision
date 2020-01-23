@@ -5,6 +5,10 @@ session_start();
 // Destroying the session clears the $_SESSION variable, thus "logging" the user
 // out. This also happens automatically when the browser is closed
 $username=$_SESSION['user_id'];
+$past = new DateTime($_SESSION['user_date_init'] );
+$now = new DateTime;
+$momentInit=$past->format( 'd-m-Y H:i:s' );
+$momentEnd=$now->format( 'd-m-Y H:i:s' );
 session_destroy();
 ?>
 <!DOCTYPE html>
@@ -16,7 +20,7 @@ session_destroy();
 <?php
 
 echo ("<h1>".$username." haz terminado tu sesion correctamente</h1>");
-
+echo ("<p>Iniciaste: ".$momentInit."  Saliste: ".$momentEnd."</p>");
 
 
 	echo ('<a href="login.php">Identificarse</a> ');

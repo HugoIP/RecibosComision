@@ -16,6 +16,9 @@ if ( ! empty( $_POST ) ) {
     	if ( $_POST['password'] == $user->txt_pass ) {
     		$_SESSION['user_id'] = $user->txt_userName;
             $_SESSION['user_location'] = $_POST['selectLocation'];
+            $now   = new DateTime;
+            $moment=$now->format( 'd-m-Y H:i:s' );
+            $_SESSION['user_date_init'] = $now;
     	}
     }
 }
