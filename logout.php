@@ -8,6 +8,8 @@ $username=$_SESSION['user_id'];
 $past = new DateTime;
 $now = new DateTime;
 $past =$_SESSION['user_date_init'] ;
+$interval = $past->diff($now);
+$difTime= $interval->format("%H:%I:%S");
 $momentInit=$past->format( 'd-m-Y H:i:s' );
 $momentEnd=$now->format( 'd-m-Y H:i:s' );
 session_destroy();
@@ -22,6 +24,7 @@ session_destroy();
 
 echo ("<h1>".$username." haz terminado tu sesion correctamente</h1>");
 echo ("<p>Iniciaste: ".$momentInit."  Saliste: ".$momentEnd."</p>");
+echo ("<p>Tiempo de session ".$difTime."</p>");
 
 
 	echo ('<a href="login.php">Identificarse</a> ');
