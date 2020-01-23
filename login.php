@@ -23,41 +23,57 @@ if ( ! empty( $_POST ) ) {
     }
 }
 ?>
-
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Identificacion</title>
-</head>
-<body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-<h1>Recibos CFE</h1>
+    <title>Inicio de Sesion</title>
 
-<?php
-// You'd put this code at the top of any "protected" page you create
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
 
-if ( isset( $_SESSION['user_id'] ) ) {
-    // Grab user data from the database using the user_id
-    // Let them access the "logged in only" pages
-	echo ("<h2>Bienvenido/a  ".$_SESSION['user_id']."</h2>");
-	echo ('<a href="logout.php">Salir</a> ');
-	  
-} else {
-    // Redirect them to the login page
-    echo ('
-    <form action="" method="post">
-	    <input type="text" name="username" placeholder="Ingresa tu Identificador" required>
-	    <input type="password" name="password" placeholder="Clave personal" required>
-        <!-- The second value will be selected initially -->
-        <select name="selectLocation">
-          <option value="0" selected>Ubicacion</option> 
-          <option value="1">vNova (Jardin 4, Santa Catarina Villanueva, Quecholac)</option>
-          <option value="2">wNova (Guadalupe Victoria s/n, Barrio Guadalupe Analco, Gral. Felipe Angeles)</option>
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <?php
+    // You'd put this code at the top of any "protected" page you create
+
+    if ( isset( $_SESSION['user_id'] ) ) {
+        // Grab user data from the database using the user_id
+        // Let them access the "logged in only" pages
+        echo ('<h1 class="h3 mb-3 font-weight-normal">Bienvenido/a  '.$_SESSION['user_id']."</h1>");
+        echo ('<a href="logout.php">Salir</a> ');
+          
+    } else {
+    ?>
+    
+
+    <form class="form-signin" action="" method="post">
+      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Ingresar</h1>
+      <label for="user" class="sr-only">Identificador</label>
+      <input type="text" id="user" name="username" class="form-control" placeholder="Ingresa tu Identificador" required autofocus>
+      <label for="inputPassword" class="sr-only">Clave</label>
+      <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Clave personal" required>
+      <select name="selectLocation" class="form-control">
+          <option value="999" selected>Ubicacion</option> 
+          <option value="0">vNova (Jardin 4, Santa Catarina Villanueva, Quecholac)</option>
+          <option value="1">wNova (Guadalupe Victoria s/n, Barrio Guadalupe Analco, Gral. Felipe Angeles)</option>
         </select>
-	    <input type="submit" value="Ingresar">');  
-}
-?>
-
-</form>
-</body>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+    </form>
+    <?php
+    }
+    ?>
+  </body>
 </html>
