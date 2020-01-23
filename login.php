@@ -60,16 +60,24 @@ if ( ! empty( $_POST ) ) {
     <form class="form-signin" action="" method="post">
       <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Ingresar</h1>
+      <div class="form-group">
       <label for="user" class="sr-only">Identificador</label>
       <input type="text" id="user" name="username" class="form-control" placeholder="Ingresa tu Identificador" required autofocus>
+      </div>
+      <div class="form-group">
       <label for="inputPassword" class="sr-only">Clave</label>
       <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Clave personal" required>
+      </div>
+      <div class="form-group">
       <select name="selectLocation" class="form-control">
           <option value="999" selected>Ubicacion</option> 
           <option value="0">vNova (Jardin 4, Santa Catarina Villanueva, Quecholac)</option>
           <option value="1">wNova (Guadalupe Victoria s/n, Barrio Guadalupe Analco, Gral. Felipe Angeles)</option>
         </select>
+      </div>
+      <div class="form-group">
       <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+      </div>
       <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     </form>
     <?php
