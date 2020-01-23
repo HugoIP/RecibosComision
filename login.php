@@ -1,11 +1,11 @@
 <?php
 // Always start this first
 session_start();
-echo($_POST['username']);
-echo($_POST['password']);
 if ( ! empty( $_POST ) ) {
     if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
     	$usernam=$_POST['username'];
+        echo($_POST['username']);
+echo($_POST['password']);
         // Getting submitted user data from database
         $con = new mysqli("localhost","ihuancom_hugoip","MONICA","ihuancom_RecibosComision");
         $stmt = $con->prepare("SELECT * FROM Usuarios WHERE txt_userName = '$usernam'");
@@ -18,6 +18,9 @@ if ( ! empty( $_POST ) ) {
     	if ( password_verify( $_POST['password'], $user->txt_pass ) ) {
     		$_SESSION['user_id'] = $user->txt_userName;
             echo ($user->txt_userName);
+
+            echo($_POST['username']);
+echo($_POST['password']);
     	}
     }
 }
