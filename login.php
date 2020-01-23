@@ -15,6 +15,7 @@ if ( ! empty( $_POST ) ) {
     	// Verify user password and set $_SESSION
     	if ( $_POST['password'] == $user->txt_pass ) {
     		$_SESSION['user_id'] = $user->txt_userName;
+            $_SESSION['user_location'] = $_POST['selectLocation'];
     	}
     }
 }
@@ -44,6 +45,12 @@ if ( isset( $_SESSION['user_id'] ) ) {
     <form action="" method="post">
 	    <input type="text" name="username" placeholder="Ingresa tu Identificador" required>
 	    <input type="password" name="password" placeholder="Clave personal" required>
+        <!-- The second value will be selected initially -->
+        <select name="selectLocation">
+          <option value="0" selected>Ubicacion</option> 
+          <option value="1">vNova (Jardin 4, Santa Catarina Villanueva, Quecholac)</option>
+          <option value="2">wNova (Guadalupe Victoria s/n, Barrio Guadalupe Analco, Gral. Felipe Angeles)</option>
+        </select>
 	    <input type="submit" value="Ingresar">');  
 }
 ?>
