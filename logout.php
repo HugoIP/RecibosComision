@@ -42,13 +42,16 @@ session_destroy();
 
 <body>
 <?php
-
-echo ('<h1 class="h3 mb-3 font-weight-normal">'.$username." haz terminado tu sesion correctamente</h1>");
-echo ("<p>".$userlocation."    Iniciaste: ".$momentInit."  Saliste: ".$momentEnd."</p>");
-echo ("<p>Tiempo de session ".$difTime."</p>");
-
-
-	echo ('<a href="login.php">Identificarse</a> ');
+	if(isset($username)){
+		echo ('<h1 class="h3 mb-3 font-weight-normal">'.$username." haz terminado tu sesion correctamente</h1>");
+		echo ("<p>".$userlocation."    Iniciaste: ".$momentInit."  Saliste: ".$momentEnd."</p>");
+		echo ("<p>Tiempo de session ".$difTime."</p>");
+		echo ('<a href="login.php">Identificarse</a> ');
+	}
+	else
+	{
+		echo ('<a href="login.php">Identificarse</a> ');
+	}
 ?>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
