@@ -7,7 +7,7 @@ if(isset( $_SESSION['user_id'] ))
   $userlocation=$_SESSION['user_location'];
   $userLocationName="";
   switch ($userLocation) {
-    case '0':
+    case 0:
       $userLocationName="wNova (Guadalupe Victoria s/n, Barrio Guadalupe Analco, Gral. Felipe Angeles)";
       break;
     
