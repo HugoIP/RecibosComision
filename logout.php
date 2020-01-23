@@ -15,7 +15,7 @@ session_destroy();
 <body>
 <?php
 
-echo ("<h2>"+$username+" haz terminado tu sesion</h2>");
+echo ("<h1>".$username." haz terminado tu sesion</h1>");
 
 
 

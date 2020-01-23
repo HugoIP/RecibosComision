@@ -32,12 +32,10 @@ if ( ! empty( $_POST ) ) {
 <?php
 // You'd put this code at the top of any "protected" page you create
 
-
-
 if ( isset( $_SESSION['user_id'] ) ) {
     // Grab user data from the database using the user_id
     // Let them access the "logged in only" pages
-	echo ("<p>Bienvenido/a  "+$_SESSION['user_id']+"</p>");
+	echo ("<h2>Bienvenido/a  ".$_SESSION['user_id']."</h2>");
 	echo ('<a href="logout.php">Salir</a> ');
 	  
 } else {
