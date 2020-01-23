@@ -14,7 +14,7 @@ echo ("<h2>"+$_SESSION['user_id']+" haz terminado tu sesion</h2>");
 session_destroy();
 
 
-	echo ('<a href="vnovainternet.ihuan.com.mx/RecibosComision/login.php">Identificarse</a> ');
+	echo ('<a href="login.php">Identificarse</a> ');
 ?>
 </body>
 </html>
