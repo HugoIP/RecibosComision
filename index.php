@@ -5,6 +5,16 @@ if(isset( $_SESSION['user_id'] ))
 {
   $userName=$_SESSION['user_id'];
   $userlocation=$_SESSION['user_location'];
+  $userLocationName="";
+  switch ($userLocation) {
+    case '0':
+      $userLocationName="wNova (Guadalupe Victoria s/n, Barrio Guadalupe Analco, Gral. Felipe Angeles)";
+      break;
+    
+    default:
+      $userLocationName="vNova (Jardin 4, Santa Catarina Villanueva, Quecholac)";
+      break;
+  }
 }
 ?>
 <!doctype html>
@@ -58,12 +68,12 @@ $(document).ready(function () {
           </ul>
           <form class="form-inline mt-2 mt-md-0">
             <?php
-
-
             if(isset($userName)){
               ?>
               <div class="alert alert-success" role="alert">
-                <strong>Usuario </strong> $userName
+                <p><strong>Usuario </strong> <?php echo ($userName); ?></p>
+                <p><?php echo ($userLocationName); ?></p>
+                <a href="logout.php">Salir</a>
               </div>
               <?php
             }
@@ -128,7 +138,7 @@ $contador=0;
 
 while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <?php  
-  if(intval($misdatos["geoLoc"])==0)
+  if(intval($misdatos["geoLoc"])==$userlocation)
     {
   ?>
       
@@ -141,11 +151,16 @@ while($misdatos = mysqli_fetch_assoc($resultado)){ $contador++;?>
   <td><?php echo $misdatos["orderGrup"]; ?></td>
   <td><?php echo $misdatos["texStatus"]; ?></td>
   <td><?php 
-    if(intval($misdatos["geoLoc"])==0)
+    if($userlocation==0)
     {
       echo "Analco";
     }
+    else
+    {
+      echo "Villanueva";
+    }
      ?></td>
+    }
   </tr>
           
 <?php }}?>          
