@@ -43,7 +43,7 @@ session_destroy();
 
   </head>
 
-<body>
+<body class="text-center">
 <?php
 	if(isset($username)){
 		echo ('<h1 class="h3 mb-3 font-weight-normal">'.$username." haz terminado tu sesion correctamente</h1>");
