@@ -11,7 +11,7 @@ foreach($servicios as $servicio){
     $monto= $servicio['monto'];
     $orderGrup= $servicio['orderGrup'];
     $ordinal= $servicio['ordinal'];
-        $query = "UPDATE `servicios` SET `barCode`='$barCode',`serviceNum`='$serviceNum',`limitPay`='2022-05-30',`pay`='$monto',`dateDeliver`='0000-00-00',`texStatus`='-No-',`orderGrup`='$orderGrup',`ordinal`='$ordinal',`geoLoc`=1 WHERE serviceNum='$serviceNum'";
+        $query = "UPDATE `Servicios` SET `barCode`='$barCode',`serviceNum`='$serviceNum',`limitPay`='2022-05-30',`pay`='$monto',`dateDeliver`='0000-00-00',`texStatus`='-No-',`orderGrup`='$orderGrup',`ordinal`='$ordinal',`geoLoc`=1 WHERE serviceNum='$serviceNum'";
         $result = mysqli_query($connection, $query);
         if(!$result){
             echo "No agregados:   ".$barCode." --- ".$serviceNum."   ++++++   \n";   
